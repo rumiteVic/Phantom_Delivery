@@ -24,7 +24,7 @@ public class Palanca : MonoBehaviour
     }
 
     private void OnTriggerEnter2D(Collider2D col){
-        if (col.gameObject.CompareTag("Pakete"))
+        if (col.gameObject.CompareTag("Normal") || col.gameObject.CompareTag("Pesado") || col.gameObject.CompareTag("Escalador"))
         canActivar = true;
     }
 
