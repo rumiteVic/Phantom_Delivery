@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4943567737577786768}
   - component: {fileID: 3849431095851144074}
   - component: {fileID: 2571201988005129277}
+  - component: {fileID: 8214541972628109276}
   m_Layer: 7
   m_Name: Escalador
   m_TagString: Escalador
@@ -27,7 +28,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3570308761684899865}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 4.61, y: -1.4, z: -0.023211772}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -153,3 +154,15 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &8214541972628109276
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3570308761684899865}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 594bd92f6290c684993e22b039d34c8c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

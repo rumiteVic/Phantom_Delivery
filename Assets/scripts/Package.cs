@@ -60,6 +60,7 @@ public class Package : MonoBehaviour
         rb.simulated = false;
         col.enabled = false;
     }
+    
     public void OnDropped() {
         carrier = null;
         transform.parent = null;
