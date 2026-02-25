@@ -10,6 +10,8 @@ TagManager:
   - Pesado
   - Escalador
   - Fantasma
+  - Entierro
+  - Empujable
   layers:
   - Default
   - TransparentFX
@@ -23,7 +25,7 @@ TagManager:
   - PhantomWall
   - Phantom
   - Human
-  - 
+  - Package
   - 
   - 
   - 
