@@ -10,8 +10,8 @@ public class PlayerController : MonoBehaviour
     }
     public Repartidor repaTipo;
     private InputSystem_Actions input;
-    float speed = 3f;
-    float baseSpeed = 3f;
+    float speed = 5f;
+    float baseSpeed = 5f;
     float jumpForce = 8f;
     float baseJump = 8f;
     float throwForce = 5f;
@@ -70,32 +70,32 @@ public class PlayerController : MonoBehaviour
     void StatsRepartidor(){
         switch (repaTipo){
             case Repartidor.Fantasma:
-                baseSpeed = 5f;
-                speed = 5f;
+                baseSpeed = 9f;
+                speed = 9f;
                 jumpForce = 5f;
                 baseJump = 5f;
                 throwForce = 5f;
                 break;
                 
             case Repartidor.Normal:
-                baseSpeed = 5f;
-                speed = 5f;
+                baseSpeed = 9f;
+                speed = 9f;
                 jumpForce = 5f;
                 baseJump = 5f;
                 throwForce = 5f;
                 break;
 
             case Repartidor.Heavy:
-                baseSpeed = 3f;
-                speed = 3f;
+                baseSpeed = 6f;
+                speed = 6f;
                 baseJump = 4f;
                 jumpForce = 4f;
                 throwForce = 7f;
                 break;
 
             case Repartidor.Climber:
-                baseSpeed = 4f;
-                speed = 4f;
+                baseSpeed = 8f;
+                speed = 8f;
                 baseJump = 8f;
                 jumpForce = 8f;
                 throwForce = 5f;
