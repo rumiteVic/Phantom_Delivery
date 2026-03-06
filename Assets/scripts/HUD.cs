@@ -15,6 +15,7 @@ public class HUD : MonoBehaviour
     public GameObject escMenu;
     public GameObject optionsMenu;
     public GameObject creditosMenu;
+    public AudioSource audioClick;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -97,17 +98,21 @@ public class HUD : MonoBehaviour
     }
 
     public void Iniciar(){
+        audioClick.Play();
         SceneManager.LoadScene(1);
     }
 
     public void Opciones(){
+        audioClick.Play();
         menu = 2;
     }
     public void Salir(){
+        audioClick.Play();
         Application.Quit();
     }
 
     public void Return(){
+        audioClick.Play();
         if(isMainMenu)
         {
             menu = 0;
@@ -119,18 +124,27 @@ public class HUD : MonoBehaviour
     }
 
     public void Resume(){
+        audioClick.Play();
         menu = 3;
     }
 
     public void ExitGame(){
+        audioClick.Play();
         SceneManager.LoadScene(0);
     }
     public void Creditos(){
+        audioClick.Play();
         menu = 4;
     }
 
     public void ReturnMainMenu(){
+        audioClick.Play();
         menu = 0;
         SceneManager.LoadScene(0);
+    }
+
+    public void Retry(){
+        audioClick.Play();
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
