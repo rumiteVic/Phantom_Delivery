@@ -6,7 +6,7 @@ public class Player : MonoBehaviour
     SpriteRenderer sprite;
     public PlayerController cont;
 
-    public float pickupRadius = 0.5f;
+    public float pickupRadius = 1f;
     public LayerMask packageLayer;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -24,25 +24,26 @@ public class Player : MonoBehaviour
         if(cont.move.x < 0){
             sprite.flipX = true;
         }
-        if (cont.currentBody != null && cont.isFantasma && input.Player.Interact.WasPressedThisFrame()){
-            cont.CambiarCuerpo(cont.currentBody);
-        }
         if (input.Player.Activate.WasPressedThisFrame()){
             if (cont.carriedPackage != null){
                 cont.carriedPackage.OnDropped();
                 cont.carriedPackage = null;
                 return;
             }
-            if (cont.isFantasma) return;
+        }
 
+        if (!cont.isFantasma){
             Collider2D hit = Physics2D.OverlapCircle(transform.position, pickupRadius, packageLayer);
+            Debug.Log("Hit: " + hit);
             if (hit != null){
                 Package pkg = hit.GetComponent<Package>();
                 if (pkg != null){
                     cont.carriedPackage = pkg;
                     pkg.OnPickedUp(transform);
+                    cont.ApplyPackageEffects(pkg);
                 }
             }
+
         }
     }
 

@@ -1,5 +1,5 @@
 using UnityEngine;
-
+using TMPro;
 public class GameManager : MonoBehaviour
 {
     
@@ -14,11 +14,24 @@ public class GameManager : MonoBehaviour
     float startTime;
     float endTime;
 
-    public LevelEndUI end;
+    public GameObject endPanel;
+    public LevelEndUI levelEndUI;
 
+    public float timeForThree = 60f;
+    public float timeForTwo = 120f;
+
+    bool win = false;
+
+    public TMP_Text packagesText;
+    public TMP_Text bodiesText;
     void Awake(){
         Instance = this;
         startTime = Time.time;
+    }
+
+    void Start(){
+        UpdatePackagesText();
+        UpdateBodiesText();
     }
     
     // Update is called once per frame
@@ -29,21 +42,46 @@ public class GameManager : MonoBehaviour
 
     void CheckWinCondition()
     {
-        if (packagesDelivered >= totalPackages && bodiesBuried >= totalBodies)
+        if (packagesDelivered >= totalPackages && bodiesBuried >= totalBodies && !win)
         {
             endTime = Time.time;
             float totalTime = endTime - startTime;
 
-            CalculateStars(totalTime);
+            int stars = CalculateStars(totalTime);
+            ShowEndScreen(stars);
+            win = true;
         }
     }
-    void CalculateStars(float time)
+    int CalculateStars(float time)
     {
-        if (time < 60f)
-            Debug.Log("3 estrellas");
-        else if (time < 120f)
-            Debug.Log("2 estrellas");
+        if (time < timeForThree)
+            return 3;
+        else if (time < timeForTwo)
+            return 2;
         else
-            Debug.Log("1 estrella");
+            return 1;
+    }
+
+    void ShowEndScreen(int stars){
+        endPanel.SetActive(true);
+        levelEndUI.ShowResult(stars);
+        Time.timeScale = 0f;
+    }
+
+    public void UpdatePakage(){
+        packagesDelivered++;
+        UpdatePackagesText();
+    }
+    public void UpdateBody(){
+        bodiesBuried++;
+        UpdateBodiesText();
+    }
+
+    void UpdatePackagesText(){
+        packagesText.text = $"{packagesDelivered}/{totalPackages}";
+    }
+
+    void UpdateBodiesText(){
+        bodiesText.text = $"{bodiesBuried}/{totalBodies}";
     }
 }

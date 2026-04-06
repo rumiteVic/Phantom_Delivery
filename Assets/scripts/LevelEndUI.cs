@@ -3,8 +3,6 @@ using TMPro;
 
 public class LevelEndUI : MonoBehaviour
 {
-    public GameObject endPanel;
-
     public GameObject star1;
     public GameObject star2;
     public GameObject star3;
@@ -13,8 +11,6 @@ public class LevelEndUI : MonoBehaviour
 
     public void ShowResult(int stars)
     {
-        endPanel.SetActive(true);
-
         star1.SetActive(stars >= 1);
         star2.SetActive(stars >= 2);
         star3.SetActive(stars >= 3);

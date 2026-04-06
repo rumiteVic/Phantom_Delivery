@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using TMPro;
@@ -16,6 +17,9 @@ public class HUD : MonoBehaviour
     public GameObject optionsMenu;
     public GameObject creditosMenu;
     public AudioSource audioClick;
+
+    public AudioMixer masterMixer;
+    public Slider volumeSlider;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -35,6 +39,10 @@ public class HUD : MonoBehaviour
             hudMenu.gameObject.SetActive(true);
             creditosMenu.gameObject.SetActive(false);
         }
+        float savedValue = PlayerPrefs.GetFloat("masterVolume", 1f);
+
+        volumeSlider.value = savedValue;
+        SetMasterVolume(savedValue);
     }
 
     // Update is called once per frame
@@ -126,6 +134,7 @@ public class HUD : MonoBehaviour
     public void Resume(){
         audioClick.Play();
         menu = 3;
+        Time.timeScale = 1f;
     }
 
     public void ExitGame(){
@@ -146,5 +155,23 @@ public class HUD : MonoBehaviour
     public void Retry(){
         audioClick.Play();
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    public void PauseMenu(){
+        audioClick.Play();
+        menu = 1;
+        Time.timeScale = 0f;
+    }
+
+    public void SetMasterVolume(float value){
+        float rawValue = value;
+
+        value = Mathf.Clamp(value, 0.0001f, 1f);
+        value = Mathf.Pow(value, 2f);
+
+        float volume = Mathf.Log10(value) * 20f;
+
+        masterMixer.SetFloat("masterVolume", volume);
+        PlayerPrefs.SetFloat("MasterVolume", rawValue);
     }
 }

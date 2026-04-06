@@ -12,8 +12,8 @@ public class PlayerController : MonoBehaviour
     private InputSystem_Actions input;
     float speed = 5f;
     float baseSpeed = 5f;
-    float jumpForce = 8f;
-    float baseJump = 8f;
+    float jumpForce = 10f;
+    float baseJump = 10f;
     float throwForce = 5f;
     bool canJump = false;
     bool iz = false;
@@ -65,6 +65,7 @@ public class PlayerController : MonoBehaviour
         escalador.SetActive(false);
         stamina = maxStamina;
         col = GetComponent<CapsuleCollider2D>();
+        StatsRepartidor();
     }
     
     void StatsRepartidor(){
@@ -72,38 +73,41 @@ public class PlayerController : MonoBehaviour
             case Repartidor.Fantasma:
                 baseSpeed = 9f;
                 speed = 9f;
-                jumpForce = 5f;
-                baseJump = 5f;
-                throwForce = 5f;
+                jumpForce = 9f;
+                baseJump = 9f;
+                throwForce = 0f;
                 break;
                 
             case Repartidor.Normal:
                 baseSpeed = 9f;
                 speed = 9f;
-                jumpForce = 5f;
-                baseJump = 5f;
+                jumpForce = 9f;
+                baseJump = 9f;
                 throwForce = 5f;
                 break;
 
             case Repartidor.Heavy:
                 baseSpeed = 6f;
                 speed = 6f;
-                baseJump = 4f;
-                jumpForce = 4f;
+                baseJump = 6f;
+                jumpForce = 6f;
                 throwForce = 7f;
                 break;
 
             case Repartidor.Climber:
-                baseSpeed = 8f;
-                speed = 8f;
-                baseJump = 8f;
-                jumpForce = 8f;
+                baseSpeed = 10f;
+                speed = 10f;
+                baseJump = 11f;
+                jumpForce = 11f;
                 throwForce = 5f;
                 break;
         }
+        if (carriedPackage != null){
+            ApplyPackageEffects(carriedPackage);
+        }
     }
 
-    void ApplyPackageEffects(Package pkg){
+    public void ApplyPackageEffects(Package pkg){
         switch (pkg.paquete){
             case Package.TipoPaquete.Normal:
                 speed = baseSpeed;
@@ -240,6 +244,7 @@ public class PlayerController : MonoBehaviour
         if (input.Player.Interact.WasPressedThisFrame()){
             if (isFantasma && currentBody != null){
                 CambiarCuerpo(currentBody);
+                if (TryDeleteBody()) return;
             }
             else if (!isFantasma){
                 ReturnPhantom();
@@ -285,9 +290,27 @@ public class PlayerController : MonoBehaviour
             dir = new Vector2(-1f, 0.6f);
         }
         
-        carriedPackage.OnThrown(dir * throwForce);
+        carriedPackage.OnThrown(dir * throwForce, rb.linearVelocity);
         carriedPackage = null;
         speed = baseSpeed;
         jumpForce = baseJump;
+    }
+
+    bool TryDeleteBody(){
+        Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, 1f);
+
+        foreach (Collider2D hit in hits){
+            Debug.Log("Detectado: " + hit.name);
+
+            DeleteBody del = hit.GetComponent<DeleteBody>();
+
+            if (del != null){
+                Debug.Log("DELETE ENCONTRADO");
+                del.DeleteBodyThere();
+                return true;
+            }
+        }
+
+        return false;
     }
 }

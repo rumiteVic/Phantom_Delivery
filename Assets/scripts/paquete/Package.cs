@@ -19,6 +19,8 @@ public class Package : MonoBehaviour
     private float startY;
     public TipoPaquete paquete;
     Transform carrier;
+
+    bool canBePicked = true;
     void Awake() {
         rb = GetComponent<Rigidbody2D>();
         col = GetComponent<Collider2D>();
@@ -48,6 +50,7 @@ public class Package : MonoBehaviour
     }
 
     public void OnPickedUp(Transform holder) {
+        if (!canBePicked) return;
         carrier = holder;
         transform.parent = holder;
         transform.localPosition = new Vector3(0f, 1.8f, 0f);
@@ -62,11 +65,13 @@ public class Package : MonoBehaviour
         col.enabled = true;
     }
 
-    public void OnThrown(Vector2 force) {
+    public void OnThrown(Vector2 force, Vector2 playerVelocity) {
         OnDropped();
         startY = transform.position.y;
-
+        canBePicked = false;
+        rb.linearVelocity = playerVelocity;
         rb.AddForce(force * throwForceMultiplier, ForceMode2D.Impulse);
+        Invoke(nameof(EnablePickup), 0.3f);
     }
 
     private void OnCollisionEnter2D(Collision2D col) {
@@ -82,5 +87,8 @@ public class Package : MonoBehaviour
         Debug.Log("Paquete roto");
         Destroy(gameObject);
     }
+    void EnablePickup(){
+        canBePicked = true;
+    }   
 
 }
