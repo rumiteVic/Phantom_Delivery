@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -50,6 +51,9 @@ public class Player : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D col) {
         if (col.CompareTag("Normal") || col.CompareTag("Pesado") || col.CompareTag("Escalador")){
             cont.currentBody = col;
+        }
+        if(col.CompareTag("Agua")){
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
     }
 

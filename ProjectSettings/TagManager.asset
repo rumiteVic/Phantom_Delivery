@@ -12,6 +12,7 @@ TagManager:
   - Fantasma
   - Entierro
   - Empujable
+  - Agua
   layers:
   - Default
   - TransparentFX

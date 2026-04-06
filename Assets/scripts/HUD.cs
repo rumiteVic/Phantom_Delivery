@@ -20,6 +20,8 @@ public class HUD : MonoBehaviour
 
     public AudioMixer masterMixer;
     public Slider volumeSlider;
+
+    public GameObject cont;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -50,15 +52,6 @@ public class HUD : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.Escape) && !isMainMenu){
             menu = 1;
-        }
-        if (Input.GetKeyDown(KeyCode.F1)){
-            SceneManager.LoadScene(1);
-        }
-        if (Input.GetKeyDown(KeyCode.F2)){
-            SceneManager.LoadScene(2);
-        }
-        if (Input.GetKeyDown(KeyCode.F3)){
-            SceneManager.LoadScene(3);
         }
         if (menu == 0){
             //Menu home
@@ -172,6 +165,19 @@ public class HUD : MonoBehaviour
         float volume = Mathf.Log10(value) * 20f;
 
         masterMixer.SetFloat("masterVolume", volume);
-        PlayerPrefs.SetFloat("MasterVolume", rawValue);
+        PlayerPrefs.SetFloat("masterVolume", rawValue);
+    }
+
+    public void NextLevel(){
+        int indiceActual = SceneManager.GetActiveScene().buildIndex;
+        SceneManager.LoadScene(indiceActual + 1);
+    }
+
+    public void ControlsMenu(){
+        cont.SetActive(true);
+    }
+
+    public void BackCont(){
+        cont.SetActive(false);
     }
 }

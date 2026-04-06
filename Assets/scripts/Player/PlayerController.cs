@@ -71,34 +71,34 @@ public class PlayerController : MonoBehaviour
     void StatsRepartidor(){
         switch (repaTipo){
             case Repartidor.Fantasma:
-                baseSpeed = 9f;
-                speed = 9f;
-                jumpForce = 9f;
-                baseJump = 9f;
+                baseSpeed = 7f;
+                speed = 7f;
+                jumpForce = 20f;
+                baseJump = 20f;
                 throwForce = 0f;
                 break;
                 
             case Repartidor.Normal:
-                baseSpeed = 9f;
-                speed = 9f;
-                jumpForce = 9f;
-                baseJump = 9f;
+                baseSpeed = 7f;
+                speed = 7f;
+                jumpForce = 20f;
+                baseJump = 20f;
                 throwForce = 5f;
                 break;
 
             case Repartidor.Heavy:
-                baseSpeed = 6f;
-                speed = 6f;
-                baseJump = 6f;
-                jumpForce = 6f;
+                baseSpeed = 5f;
+                speed = 5f;
+                baseJump = 16f;
+                jumpForce = 16f;
                 throwForce = 7f;
                 break;
 
             case Repartidor.Climber:
                 baseSpeed = 10f;
                 speed = 10f;
-                baseJump = 11f;
-                jumpForce = 11f;
+                baseJump = 24f;
+                jumpForce = 24f;
                 throwForce = 5f;
                 break;
         }

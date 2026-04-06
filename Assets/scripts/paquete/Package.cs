@@ -71,7 +71,7 @@ public class Package : MonoBehaviour
         canBePicked = false;
         rb.linearVelocity = playerVelocity;
         rb.AddForce(force * throwForceMultiplier, ForceMode2D.Impulse);
-        Invoke(nameof(EnablePickup), 0.3f);
+        Invoke(nameof(EnablePickup), 0.2f);
     }
 
     private void OnCollisionEnter2D(Collision2D col) {
