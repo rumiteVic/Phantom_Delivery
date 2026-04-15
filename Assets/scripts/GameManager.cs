@@ -27,6 +27,7 @@ public class GameManager : MonoBehaviour
 
     public FinalNivel finalNivel;
     public UIFade fadeUI;
+
     void Awake(){
         Instance = this;
         startTime = Time.time;
@@ -67,7 +68,6 @@ public class GameManager : MonoBehaviour
 
     public void MostrarResultadosFinal(int stars){
         endPanel.SetActive(true);
-
         UIFade fadeUI = endPanel.GetComponent<UIFade>();
         fadeUI.canvasGroup.alpha = 0f;
 

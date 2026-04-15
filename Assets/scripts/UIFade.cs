@@ -14,6 +14,7 @@ public class UIFade : MonoBehaviour
     {
         float start = canvasGroup.alpha;
         float tiempo = 0f;
+        
 
         while (tiempo < duracion)
         {

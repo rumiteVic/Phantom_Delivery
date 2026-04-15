@@ -25166,7 +25166,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1986974204579259610
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -31192,6 +31192,7 @@ MonoBehaviour:
   desaparecer: {fileID: 987782011}
   particulas: {fileID: 987782010}
   fade: {fileID: 8680502341840902210}
+  pantallaNegra: {fileID: 1970364054784726104}
 --- !u!114 &7778063481325867126
 MonoBehaviour:
   m_ObjectHideFlags: 0
