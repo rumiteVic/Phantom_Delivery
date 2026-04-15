@@ -10,10 +10,10 @@ public class PlayerController : MonoBehaviour
     }
     public Repartidor repaTipo;
     private InputSystem_Actions input;
-    float speed = 5f;
-    float baseSpeed = 5f;
-    float jumpForce = 10f;
-    float baseJump = 10f;
+    public float speed = 7f;
+    float baseSpeed = 7f;
+    public float jumpForce = 20f;
+    float baseJump = 20f;
     float throwForce = 5f;
     bool canJump = false;
     bool iz = false;
@@ -21,14 +21,14 @@ public class PlayerController : MonoBehaviour
     public LayerMask layerMask;
     public bool grounded = false;
 
-    public Vector3 offset = new Vector3(0f, -0.75f, 0f);
-    public float radius = 0.4f;
+    public Vector3 offset = new Vector3(0f, -2f, 0f);
+    public float radius = 0.6f;
     public Vector2 move;
     public Package carriedPackage;
     Vector2 dir;
 
     public LayerMask climbLayer;
-    bool isClimbing;
+    public bool isClimbing;
 
     public GameObject fantasma;
     public GameObject normal;
@@ -67,6 +67,10 @@ public class PlayerController : MonoBehaviour
         col = GetComponent<CapsuleCollider2D>();
         StatsRepartidor();
     }
+    void OnDrawGizmos(){
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position + offset, radius);
+    }
     
     void StatsRepartidor(){
         switch (repaTipo){
@@ -102,6 +106,8 @@ public class PlayerController : MonoBehaviour
                 throwForce = 5f;
                 break;
         }
+        speed = baseSpeed;
+        jumpForce = baseJump;
         if (carriedPackage != null){
             ApplyPackageEffects(carriedPackage);
         }
@@ -133,8 +139,7 @@ public class PlayerController : MonoBehaviour
         escalador.SetActive(false);
     }
 
-    public void CambiarCuerpo(Collider2D col)
-    {
+    public void CambiarCuerpo(Collider2D col){
         DisableAllBodies();
         if (col.CompareTag("Normal")){
             normal.SetActive(true);
@@ -153,6 +158,7 @@ public class PlayerController : MonoBehaviour
         StatsRepartidor();
         isFantasma = false;
         gameObject.layer = LayerMask.NameToLayer("Human");
+        rb.linearVelocity = Vector2.zero;
     }
 
     void ReturnPhantom(){
@@ -177,6 +183,7 @@ public class PlayerController : MonoBehaviour
             speed = baseSpeed;
             jumpForce = baseJump;
         }
+        StatsRepartidor();
     }
 
     void FixedUpdate(){
@@ -300,8 +307,6 @@ public class PlayerController : MonoBehaviour
         Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, 1f);
 
         foreach (Collider2D hit in hits){
-            Debug.Log("Detectado: " + hit.name);
-
             DeleteBody del = hit.GetComponent<DeleteBody>();
 
             if (del != null){

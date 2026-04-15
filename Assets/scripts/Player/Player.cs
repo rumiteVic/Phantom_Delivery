@@ -9,16 +9,23 @@ public class Player : MonoBehaviour
 
     public float pickupRadius = 1f;
     public LayerMask packageLayer;
+    
+    Animator anim;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         input = new InputSystem_Actions();
         input.Player.Enable();
         sprite = GetComponent<SpriteRenderer>();
+        anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update(){
+        anim.SetFloat("Speed", Mathf.Abs(cont.move.x));
+        anim.SetBool("IsGrounded", cont.grounded);
+        anim.SetBool("IsClimbing", cont.isClimbing);
+        anim.SetFloat("VelY", cont.rb.linearVelocity.y);
         if(cont.move.x >0){
             sprite.flipX = false;
         }
@@ -33,9 +40,8 @@ public class Player : MonoBehaviour
             }
         }
 
-        if (!cont.isFantasma){
+        if (!cont.isFantasma && cont.carriedPackage == null){
             Collider2D hit = Physics2D.OverlapCircle(transform.position, pickupRadius, packageLayer);
-            Debug.Log("Hit: " + hit);
             if (hit != null){
                 Package pkg = hit.GetComponent<Package>();
                 if (pkg != null){

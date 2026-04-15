@@ -16,10 +16,13 @@ public class DeleteBody : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D col) {
 
         Debug.Log("Entró: " + col.name);
-
+        Entierro entierro = col.GetComponent<Entierro>();
         if(col.CompareTag("Entierro")){
-            canCount = true;
-            DeleteBodyThere();
+            if(entierro != null){
+                canCount = true;
+                DeleteBodyThere();
+                entierro.Entierra();
+            }
         }
     }
     public void DeleteBodyThere(){
