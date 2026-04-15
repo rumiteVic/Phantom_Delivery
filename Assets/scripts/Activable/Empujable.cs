@@ -9,6 +9,7 @@ public class Empujable : MonoBehaviour
 
     void Start()
     {
+        puedeMoverse = false;
         rb = GetComponent<Rigidbody2D>();
     }
 
@@ -17,6 +18,11 @@ public class Empujable : MonoBehaviour
         if (!puedeMoverse)
         {
             rb.linearVelocity = new Vector2(0, rb.linearVelocity.y);
+            rb.bodyType = RigidbodyType2D.Static;
+        }
+        else
+        {
+            rb.bodyType = RigidbodyType2D.Dynamic;
         }
     }
 
@@ -28,15 +34,39 @@ public class Empujable : MonoBehaviour
         {
             puedeMoverse = true;
         }
+        else
+        {
+           puedeMoverse = false;
+        }
+
+    }
+    void OnCollisionStay2D(Collision2D collision)
+    {
+        PlayerController player = collision.collider.GetComponent<PlayerController>();
+
+        if (player != null && player.repaTipo == PlayerController.Repartidor.Heavy)
+        {
+            puedeMoverse = true;
+        }
+        else
+        {
+            puedeMoverse = false;
+        }
+
     }
 
     void OnCollisionExit2D(Collision2D collision)
     {
         PlayerController player = collision.collider.GetComponent<PlayerController>();
-
-        if (player != null)
+        if (player != null && player.repaTipo == PlayerController.Repartidor.Heavy)
+        {
+            puedeMoverse = true;
+        }
+        else
         {
             puedeMoverse = false;
         }
+
+
     }
 }
