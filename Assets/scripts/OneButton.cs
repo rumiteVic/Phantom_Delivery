@@ -13,9 +13,29 @@ public class OneButton : MonoBehaviour
         SceneManager.LoadScene(indiceActual + 1);
     }
 
-    public void Next(){
+    public void Tutorial(){
+        audioClick.Play();
+        howToPlay.SetActive(true);
+        howToControles.SetActive(false);
+    }
+
+    public void Controles()
+    {
         audioClick.Play();
         howToPlay.SetActive(false);
         howToControles.SetActive(true);
+    }
+
+    public void Manual()
+    {
+        audioClick.Play();
+        howToPlay.SetActive(true);
+    }
+
+    public void Salirse()
+    {
+        audioClick.Play();
+        howToPlay.SetActive(false);
+        howToControles.SetActive(false);
     }
 }

@@ -45,6 +45,11 @@ public class HUD : MonoBehaviour
 
         volumeSlider.value = savedValue;
         SetMasterVolume(savedValue);
+        if (PlayerPrefs.HasKey("fullscreen"))
+        {
+            bool fs = PlayerPrefs.GetInt("fullscreen") == 1;
+            Screen.fullScreen = fs;
+        }
     }
 
     // Update is called once per frame
@@ -179,5 +184,12 @@ public class HUD : MonoBehaviour
 
     public void BackCont(){
         cont.SetActive(false);
+    }
+
+    public void FullScreen()
+    {
+        Screen.fullScreen = !Screen.fullScreen;
+        PlayerPrefs.SetInt("fullscreen", Screen.fullScreen ? 1 : 0);
+        PlayerPrefs.Save();
     }
 }

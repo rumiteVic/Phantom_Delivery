@@ -17,7 +17,7 @@ public class Empujable : MonoBehaviour
     {
         if (!puedeMoverse)
         {
-            rb.linearVelocity = new Vector2(0, rb.linearVelocity.y);
+            //rb.linearVelocity = Vector2.zero;
             rb.bodyType = RigidbodyType2D.Static;
         }
         else

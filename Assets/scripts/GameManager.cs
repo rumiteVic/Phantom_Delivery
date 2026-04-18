@@ -1,5 +1,6 @@
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     
@@ -92,5 +93,10 @@ public class GameManager : MonoBehaviour
 
     void UpdateBodiesText(){
         bodiesText.text = $"{bodiesBuried}/{totalBodies}";
+    }
+
+    public void ReiniciarNivel()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }

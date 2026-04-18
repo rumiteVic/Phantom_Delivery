@@ -21,6 +21,10 @@ public class Package : MonoBehaviour
     Transform carrier;
 
     bool canBePicked = true;
+
+    public AudioClip lanzar;
+    public AudioClip cae;
+    public AudioSource aud;
     void Awake() {
         rb = GetComponent<Rigidbody2D>();
         col = GetComponent<Collider2D>();
@@ -50,6 +54,10 @@ public class Package : MonoBehaviour
     }
 
     public void OnPickedUp(Transform holder) {
+        aud.loop = false;
+        aud.Stop();
+        aud.clip = cae;
+        aud.Play();
         if (!canBePicked) return;
         carrier = holder;
         transform.parent = holder;
@@ -71,10 +79,18 @@ public class Package : MonoBehaviour
         canBePicked = false;
         rb.linearVelocity = playerVelocity;
         rb.AddForce(force * throwForceMultiplier, ForceMode2D.Impulse);
+        aud.Stop();
+        aud.clip = lanzar;
+        aud.Play();
+        aud.loop = true;
         Invoke(nameof(EnablePickup), 0.2f);
     }
 
     private void OnCollisionEnter2D(Collision2D col) {
+        aud.loop = false;
+        aud.Stop();
+        aud.clip = cae;
+        aud.Play();
         if (breaksOnFall) {
             float fall = startY - transform.position.y;
             if (fall > maxFallHeight) {
@@ -89,6 +105,14 @@ public class Package : MonoBehaviour
     }
     void EnablePickup(){
         canBePicked = true;
-    }   
+    }
+
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Agua"))
+        {
+            FinalNivel.Instance.EjecutarMuerte();
+        }
+    }
 
 }

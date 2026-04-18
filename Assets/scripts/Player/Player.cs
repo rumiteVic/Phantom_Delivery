@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -9,8 +8,9 @@ public class Player : MonoBehaviour
 
     public float pickupRadius = 1f;
     public LayerMask packageLayer;
-    
     Animator anim;
+
+    public AudioSource aud;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -59,7 +59,7 @@ public class Player : MonoBehaviour
             cont.currentBody = col;
         }
         if(col.CompareTag("Agua")){
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            FinalNivel.Instance.EjecutarMuerte();
         }
     }
 
@@ -67,5 +67,11 @@ public class Player : MonoBehaviour
         if (col == cont.currentBody){
             cont.currentBody = null;
         }   
+    }
+
+    public void SoundPlay()
+    {
+        aud.Stop();
+        aud.Play();
     }
 }

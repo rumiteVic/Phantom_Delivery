@@ -7,14 +7,20 @@ public class Fade : MonoBehaviour
     public Image imagenNegra;
     public float duracion = 1f;
 
+    void Awake()
+    {
+        Color c = imagenNegra.color;
+        imagenNegra.color = new Color(c.r, c.g, c.b, 1f);
+    }
+
     public void FadeOut(System.Action onComplete = null)
     {
         StartCoroutine(FadeCoroutine(1f, onComplete));
     }
 
-    public void FadeIn()
+    public void FadeIn(System.Action onComplete = null)
     {
-        StartCoroutine(FadeCoroutine(0f, null));
+        StartCoroutine(FadeCoroutine(0f, onComplete));
     }
 
     IEnumerator FadeCoroutine(float targetAlpha, System.Action onComplete)

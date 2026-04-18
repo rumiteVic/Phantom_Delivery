@@ -49,7 +49,7 @@ public class PlayerController : MonoBehaviour
     float wallJumpLockCounter;
     bool touchingWall;
     bool isWallHolding;
-    private CapsuleCollider2D col;
+    private BoxCollider2D col;
 
     public GameObject normalBody;
     public GameObject pesadoBody;
@@ -64,7 +64,7 @@ public class PlayerController : MonoBehaviour
         pesado.SetActive(false);
         escalador.SetActive(false);
         stamina = maxStamina;
-        col = GetComponent<CapsuleCollider2D>();
+        col = GetComponent<BoxCollider2D>();
         StatsRepartidor();
     }
     void OnDrawGizmos(){
