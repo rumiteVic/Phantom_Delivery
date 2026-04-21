@@ -25,6 +25,7 @@ public class Package : MonoBehaviour
     public AudioClip lanzar;
     public AudioClip cae;
     public AudioSource aud;
+    public GameObject trail;
     void Awake() {
         rb = GetComponent<Rigidbody2D>();
         col = GetComponent<Collider2D>();
@@ -51,6 +52,7 @@ public class Package : MonoBehaviour
 
     public void Start(){
         WhatPaquete();
+        trail.SetActive(false);
     }
 
     public void OnPickedUp(Transform holder) {
@@ -64,6 +66,7 @@ public class Package : MonoBehaviour
         transform.localPosition = new Vector3(0f, 1.8f, 0f);
         rb.simulated = false;
         col.enabled = false;
+        trail.SetActive(false);
     }
     
     public void OnDropped() {
@@ -84,6 +87,7 @@ public class Package : MonoBehaviour
         aud.Play();
         aud.loop = true;
         Invoke(nameof(EnablePickup), 0.2f);
+        trail.SetActive(true);
     }
 
     private void OnCollisionEnter2D(Collision2D col) {

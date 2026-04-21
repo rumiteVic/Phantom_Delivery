@@ -1,5 +1,5 @@
 using UnityEngine;
-
+using UnityEngine.Audio;
 public class Entierro : MonoBehaviour
 {
     private Collider2D collider;
@@ -9,6 +9,7 @@ public class Entierro : MonoBehaviour
     public GameObject plant3;
 
     public GameObject part;
+    public AudioSource aud;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -17,7 +18,7 @@ public class Entierro : MonoBehaviour
 
     // Update is called once per frame
     public void Entierra() {
-
+            aud.Play();
             plant1.SetActive(true);
             plant2.SetActive(true);
             plant3.SetActive(true);

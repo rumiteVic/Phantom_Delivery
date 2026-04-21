@@ -54,6 +54,8 @@ public class PlayerController : MonoBehaviour
     public GameObject normalBody;
     public GameObject pesadoBody;
     public GameObject escaladorBody;
+
+    public AudioSource aud;
     
     void Start()
     {
@@ -85,8 +87,8 @@ public class PlayerController : MonoBehaviour
             case Repartidor.Normal:
                 baseSpeed = 7f;
                 speed = 7f;
-                jumpForce = 20f;
-                baseJump = 20f;
+                jumpForce = 22f;
+                baseJump = 22f;
                 throwForce = 5f;
                 break;
 
@@ -101,8 +103,8 @@ public class PlayerController : MonoBehaviour
             case Repartidor.Climber:
                 baseSpeed = 10f;
                 speed = 10f;
-                baseJump = 24f;
-                jumpForce = 24f;
+                baseJump = 25f;
+                jumpForce = 25f;
                 throwForce = 5f;
                 break;
         }
@@ -213,9 +215,10 @@ public class PlayerController : MonoBehaviour
                 if(grounded){
                     rb.linearVelocity = new Vector2(rb.linearVelocity.x, 0);
                     rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+                    aud.Play();
                 }
                 else if (touchingWall && repaTipo == Repartidor.Climber){
-
+                    aud.Play();
                     rb.gravityScale = 1;
                     rb.linearVelocity = Vector2.zero;
 

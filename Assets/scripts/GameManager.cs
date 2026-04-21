@@ -29,6 +29,9 @@ public class GameManager : MonoBehaviour
     public FinalNivel finalNivel;
     public UIFade fadeUI;
 
+    public AudioSource aud;
+    public AudioClip winning;
+
     void Awake(){
         Instance = this;
         startTime = Time.time;
@@ -54,6 +57,7 @@ public class GameManager : MonoBehaviour
 
             int stars = CalculateStars(totalTime);
             finalNivel.EjecutarFinal(stars);
+            SaveProgress(stars);
             win = true;
         }
     }
@@ -74,7 +78,8 @@ public class GameManager : MonoBehaviour
 
         levelEndUI.ShowResult(stars);
         fadeUI.FadeIn();
-
+        aud.clip = winning;
+        aud.Play();
         Time.timeScale = 0f;
     }
 
@@ -98,5 +103,24 @@ public class GameManager : MonoBehaviour
     public void ReiniciarNivel()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    public void SaveProgress(int stars)
+    {
+        int currentLevelIndex = SceneManager.GetActiveScene().buildIndex;
+        string starLevel = "Stars_Level" + currentLevelIndex;
+        int previousStars = PlayerPrefs.GetInt(starLevel, 0);
+        if(stars > previousStars)
+        {
+            PlayerPrefs.SetInt(starLevel, stars);
+        }
+
+        int levelReached = PlayerPrefs.GetInt("LevelReached", 1);
+        if(levelReached <= currentLevelIndex)
+        {
+            PlayerPrefs.SetInt("LevelReached", currentLevelIndex + 1);
+        }
+
+        PlayerPrefs.Save();
     }
 }

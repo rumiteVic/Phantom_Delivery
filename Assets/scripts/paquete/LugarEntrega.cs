@@ -1,5 +1,5 @@
 using UnityEngine;
-
+using UnityEngine.Audio;
 public class LugarEntrega : MonoBehaviour
 {
 
@@ -10,6 +10,7 @@ public class LugarEntrega : MonoBehaviour
     public GameObject noEntre;
     public GameObject flecha;
     public GameObject part;
+    public AudioSource aud;
 
     void Start(){
         collider = GetComponent<Collider2D>();
@@ -19,6 +20,7 @@ public class LugarEntrega : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D col) {
 
         if (col.CompareTag("Pakete")){
+            aud.Play();
             man.UpdatePakage();
             Destroy(col.gameObject);
             entre.SetActive(true);
