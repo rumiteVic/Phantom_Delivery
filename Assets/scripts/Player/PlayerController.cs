@@ -42,7 +42,7 @@ public class PlayerController : MonoBehaviour
     public Vector3 wallOffset = new Vector3(0.5f, -0.75f, 0f);
     public float maxStamina = 5f;
     public float stamina;
-    public float staminaDrain = 1.5f;
+    public float staminaDrain = 3f;
     public float staminaRecover = 2f;
     public float wallCheckRadius = 0.2f;
     float wallJumpLockTime = 0.15f;
@@ -101,10 +101,10 @@ public class PlayerController : MonoBehaviour
                 break;
 
             case Repartidor.Climber:
-                baseSpeed = 10f;
-                speed = 10f;
-                baseJump = 25f;
-                jumpForce = 25f;
+                baseSpeed = 8f;
+                speed = 8f;
+                baseJump = 14f;
+                jumpForce = 14f;
                 throwForce = 5f;
                 break;
         }
@@ -282,7 +282,11 @@ public class PlayerController : MonoBehaviour
             iz = true;
         }
         float directionn = iz ? -1f : 1f;
-        touchingWall = Physics2D.Raycast(transform.position, Vector2.right * directionn, col.bounds.extents.x + 0.1f, climbLayer);
+        Vector2 boxSize = new Vector2(0.2f, col.bounds.size.y * 0.9f);
+
+        Vector2 origin = (Vector2)transform.position + new Vector2(directionn * (col.bounds.extents.x + 0.1f), 0f);
+
+        touchingWall = Physics2D.OverlapBox(origin, boxSize, 0f, climbLayer);
 
         bool mirandoPared = (iz && move.x < 0) || (!iz && move.x > 0);
 
