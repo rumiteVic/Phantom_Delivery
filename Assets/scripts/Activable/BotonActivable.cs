@@ -5,7 +5,7 @@ public class BotonActivable : MonoBehaviour
     public Activable[] act;
 
     private void OnTriggerEnter2D(Collider2D col){
-        if (col.gameObject.CompareTag("Empujable")){
+        if (col.gameObject.CompareTag("Empujable") ||col.gameObject.CompareTag("Pakete")){
             ActivarCosas();
         }
     }
