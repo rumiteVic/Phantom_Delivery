@@ -3,7 +3,8 @@ using System.Collections;
 public class Desaparecer : MonoBehaviour
 {
     public SpriteRenderer sprite;
-    public float duracion = 1f;
+    public float duracion = 0.3f;
+    public GameObject play;
 
     public IEnumerator FadeOut()
     {
@@ -16,10 +17,10 @@ public class Desaparecer : MonoBehaviour
             float alpha = Mathf.Lerp(1f, 0f, tiempo / duracion);
 
             sprite.color = new Color(c.r, c.g, c.b, alpha);
-
+            
             yield return null;
         }
-
+        play.SetActive(false);
         sprite.color = new Color(c.r, c.g, c.b, 0f);
     }
 }

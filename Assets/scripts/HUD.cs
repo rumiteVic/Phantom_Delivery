@@ -150,6 +150,12 @@ public class HUD : MonoBehaviour
         SceneManager.LoadScene(0);
     }
 
+    public void ReturnSelector()
+    {
+        audioClick.Play();
+        SceneManager.LoadScene(1);
+    }
+
     public void Retry(){
         audioClick.Play();
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
@@ -191,5 +197,21 @@ public class HUD : MonoBehaviour
         Screen.fullScreen = !Screen.fullScreen;
         PlayerPrefs.SetInt("fullscreen", Screen.fullScreen ? 1 : 0);
         PlayerPrefs.Save();
+    }
+
+    public void TotalReset()
+    {
+        // Borramos solo el progreso de niveles
+        PlayerPrefs.DeleteKey("LevelReached");
+        PlayerPrefs.DeleteKey("TutorialCompletado");
+
+        // Para las estrellas, tendrías que hacer un bucle si tienes muchos niveles
+        for (int i = 2; i <= 20; i++) 
+        {
+            PlayerPrefs.DeleteKey("Stars_Level_" + i);
+        }
+    
+        PlayerPrefs.Save();
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }

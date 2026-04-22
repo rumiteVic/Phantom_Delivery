@@ -12,7 +12,8 @@ public class BotonSelector : MonoBehaviour
     public void BotonSeleccionador (int levelIndex, int starsCaptured, bool isUnlocked)
     {
         myLevelIndex = levelIndex;
-        levelText.text = "Level: "+ levelIndex.ToString();
+        int realLevel = myLevelIndex -1;
+        levelText.text = "Level: "+ realLevel.ToString();
         button.interactable = isUnlocked;
         lockIcon.SetActive(!isUnlocked);
         for(int i = 0; i < stars.Length; i++)

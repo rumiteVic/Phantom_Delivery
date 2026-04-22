@@ -40,6 +40,7 @@ public class GameManager : MonoBehaviour
     void Start(){
         UpdatePackagesText();
         UpdateBodiesText();
+        GestionarTutorial();
     }
     
     // Update is called once per frame
@@ -108,7 +109,7 @@ public class GameManager : MonoBehaviour
     public void SaveProgress(int stars)
     {
         int currentLevelIndex = SceneManager.GetActiveScene().buildIndex;
-        string starLevel = "Stars_Level" + currentLevelIndex;
+        string starLevel = "Stars_Level_" + currentLevelIndex;
         int previousStars = PlayerPrefs.GetInt(starLevel, 0);
         if(stars > previousStars)
         {
@@ -121,6 +122,22 @@ public class GameManager : MonoBehaviour
             PlayerPrefs.SetInt("LevelReached", currentLevelIndex + 1);
         }
 
+        PlayerPrefs.Save();
+    }
+    void GestionarTutorial()
+    {
+        int escenaActual = SceneManager.GetActiveScene().buildIndex;
+
+        // Solo si es la escena 2 (tu Nivel 1) Y no se ha completado antes
+        if (escenaActual == 2 && PlayerPrefs.GetInt("TutorialCompletado", 0) == 0)
+        {
+            OneButton.Instance.Tutorial();
+        }
+    }
+
+    public void MarcarTutorialComoHecho()
+    {
+        PlayerPrefs.SetInt("TutorialCompletado", 1);
         PlayerPrefs.Save();
     }
 }

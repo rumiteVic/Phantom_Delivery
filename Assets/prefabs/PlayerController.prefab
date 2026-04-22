@@ -183,7 +183,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sprite: {fileID: 461916350612561613}
-  duracion: 1
+  duracion: 0.5
+  play: {fileID: 3187198600773680319}
 --- !u!82 &3426783083583095986
 AudioSource:
   m_ObjectHideFlags: 0

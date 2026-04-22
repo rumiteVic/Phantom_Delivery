@@ -3,18 +3,17 @@ using UnityEngine.SceneManagement;
 using UnityEngine.Audio;
 public class OneButton : MonoBehaviour
 {
+    public static OneButton Instance;
     public GameObject howToPlay;
     public GameObject howToControles;
     public AudioSource audioClick;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    public void NextLevel(){
-        audioClick.Play();
-        int indiceActual = SceneManager.GetActiveScene().buildIndex;
-        SceneManager.LoadScene(indiceActual + 1);
+    
+    void Awake(){
+        Instance = this;
     }
 
+
     public void Tutorial(){
-        audioClick.Play();
         howToPlay.SetActive(true);
         howToControles.SetActive(false);
     }
