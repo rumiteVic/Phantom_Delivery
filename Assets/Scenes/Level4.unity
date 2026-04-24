@@ -14969,7 +14969,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 5999837561737788826}
         m_TargetAssemblyTypeName: HUD, Assembly-CSharp
-        m_MethodName: ReturnSelector
+        m_MethodName: NextLevel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -15481,7 +15481,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Exit
+  m_text: Next Level
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 42ec69869605a6f4290d6301c102d931, type: 2}
   m_sharedMaterial: {fileID: -3775152685328579946, guid: 42ec69869605a6f4290d6301c102d931, type: 2}
