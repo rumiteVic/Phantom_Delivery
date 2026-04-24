@@ -74,6 +74,7 @@ public class Package : MonoBehaviour
         transform.parent = null;
         rb.simulated = true;
         col.enabled = true;
+        startY = transform.position.y;
     }
 
     public void OnThrown(Vector2 force, Vector2 playerVelocity) {
@@ -103,9 +104,18 @@ public class Package : MonoBehaviour
         }
     }
 
-    void Break() {
+    public bool ShouldBreak()
+    {
+        if (!breaksOnFall) return false;
+
+        float fall = startY - transform.position.y;
+        return fall > maxFallHeight;
+    }
+
+    public void Break() {
         Debug.Log("Paquete roto");
         Destroy(gameObject);
+        FinalNivel.Instance.EjecutarMuerte();
     }
     void EnablePickup(){
         canBePicked = true;

@@ -111,6 +111,10 @@ public class GameManager : MonoBehaviour
         int currentLevelIndex = SceneManager.GetActiveScene().buildIndex;
         string starLevel = "Stars_Level_" + currentLevelIndex;
         int previousStars = PlayerPrefs.GetInt(starLevel, 0);
+        if (currentLevelIndex == 2) 
+        {
+            MarcarTutorialComoHecho();
+        }
         if(stars > previousStars)
         {
             PlayerPrefs.SetInt(starLevel, stars);

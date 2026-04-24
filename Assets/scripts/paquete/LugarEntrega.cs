@@ -19,15 +19,26 @@ public class LugarEntrega : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D col) {
 
-        if (col.CompareTag("Pakete")){
-            aud.Play();
-            man.UpdatePakage();
-            Destroy(col.gameObject);
-            entre.SetActive(true);
-            noEntre.SetActive(false);
-            collider.enabled = false;
-            flecha.SetActive(false);
-            Instantiate(part, transform.position, transform.rotation);
+    if (col.CompareTag("Pakete")){
+
+        Package paquete = col.GetComponent<Package>();
+
+        if (paquete != null && paquete.ShouldBreak())
+        {
+            paquete.Break();
+            return;
         }
+
+        // Entrega normal
+        aud.Play();
+        man.UpdatePakage();
+        Destroy(col.gameObject);
+
+        entre.SetActive(true);
+        noEntre.SetActive(false);
+        collider.enabled = false;
+        flecha.SetActive(false);
+        Instantiate(part, transform.position, transform.rotation);
     }
+}
 }

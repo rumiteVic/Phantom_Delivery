@@ -251,15 +251,25 @@ public class PlayerController : MonoBehaviour
         if(input.Player.Throw.WasPressedThisFrame() && !isFantasma){
             Throw();
         }
-        if (input.Player.Interact.WasPressedThisFrame()){
-            if (isFantasma && currentBody != null){
-                CambiarCuerpo(currentBody);
-                if (TryDeleteBody()) return;
+        if (input.Player.Interact.WasPressedThisFrame())
+        {
+            if (isFantasma)
+            {
+                Collider2D mejorCuerpo = GetNearestBody();
+                if (mejorCuerpo != null)
+                {
+                    Collider2D cuerpoAPoseer = mejorCuerpo; 
+                    CambiarCuerpo(cuerpoAPoseer);
+            
+                    DeleteBody del = cuerpoAPoseer.GetComponent<DeleteBody>();
+                    if (del != null) del.DeleteBodyThere();
+                }
             }
-            else if (!isFantasma){
-                ReturnPhantom();
-            }
+        else
+        {
+            ReturnPhantom();
         }
+    }
         if (input.Player.Activate.WasPressedThisFrame()){
             if (isFantasma && currentBody != null) {
                 CambiarCuerpo(currentBody);
@@ -292,37 +302,64 @@ public class PlayerController : MonoBehaviour
 
         isWallHolding = repaTipo == Repartidor.Climber && touchingWall && mirandoPared && stamina > 0;
         isClimbing = isWallHolding && Mathf.Abs(move.y) > 0.1f;
+        if (isWallHolding)
+        {
+            // Acaba de empezar a escalar
+            if (carriedPackage != null)
+            {
+                Throw(); // lo lanza automáticamente
+            }
+        }
+
     }
 
     void Throw() {
         if (carriedPackage == null) return;
-        
-        if(!iz){
-            dir = new Vector2(1f, 0.6f);
+
+        if (isClimbing){
+            if(!iz){
+                dir = new Vector2(0.3f, 1.5f);
+            }
+            else{
+                dir = new Vector2(-0.3f, 1.5f);
+            }
+
+            carriedPackage.OnThrown(dir * (throwForce * 1.5f), rb.linearVelocity);
         }
-        else if(iz){
-            dir = new Vector2(-1f, 0.6f);
+        else{
+            if(!iz){
+                dir = new Vector2(1f, 0.6f);
+            }
+            else{
+                dir = new Vector2(-1f, 0.6f);
+            }
+            carriedPackage.OnThrown(dir * throwForce, rb.linearVelocity);
         }
-        
-        carriedPackage.OnThrown(dir * throwForce, rb.linearVelocity);
+
         carriedPackage = null;
         speed = baseSpeed;
         jumpForce = baseJump;
     }
 
-    bool TryDeleteBody(){
-        Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, 1f);
+        Collider2D GetNearestBody()
+        {
+            Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, 1.5f); 
+    
+            Collider2D nearest = null;
+            float shortestDistance = Mathf.Infinity;
 
-        foreach (Collider2D hit in hits){
-            DeleteBody del = hit.GetComponent<DeleteBody>();
-
-            if (del != null){
-                Debug.Log("DELETE ENCONTRADO");
-                del.DeleteBodyThere();
-                return true;
+            foreach (Collider2D hit in hits)
+            {
+                if (hit.CompareTag("Normal") || hit.CompareTag("Pesado") || hit.CompareTag("Escalador"))
+                {
+                    float dist = Vector2.Distance(transform.position, hit.transform.position);
+                    if (dist < shortestDistance)
+                    {
+                        shortestDistance = dist;
+                        nearest = hit;
+                    }
+                }
             }
+            return nearest;
         }
-
-        return false;
-    }
 }

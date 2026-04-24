@@ -32,13 +32,6 @@ public class Player : MonoBehaviour
         if(cont.move.x < 0){
             sprite.flipX = true;
         }
-        if (input.Player.Activate.WasPressedThisFrame()){
-            if (cont.carriedPackage != null){
-                cont.carriedPackage.OnDropped();
-                cont.carriedPackage = null;
-                return;
-            }
-        }
 
         if (!cont.isFantasma && cont.carriedPackage == null){
             Collider2D hit = Physics2D.OverlapCircle(transform.position, pickupRadius, packageLayer);
@@ -55,18 +48,9 @@ public class Player : MonoBehaviour
     }
 
     private void OnTriggerEnter2D(Collider2D col) {
-        if (col.CompareTag("Normal") || col.CompareTag("Pesado") || col.CompareTag("Escalador")){
-            cont.currentBody = col;
-        }
         if(col.CompareTag("Agua")){
             FinalNivel.Instance.EjecutarMuerte();
         }
-    }
-
-    private void OnTriggerExit2D(Collider2D col){
-        if (col == cont.currentBody){
-            cont.currentBody = null;
-        }   
     }
 
     public void SoundPlay()
