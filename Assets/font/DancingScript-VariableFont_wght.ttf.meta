@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 7a6f42b21292ff04385b3ec8aa466971
+guid: 9cc9bdf48767f1249b6322cd99fa9b8a
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -9,7 +9,7 @@ TrueTypeFontImporter:
   characterPadding: 1
   includeFontData: 1
   fontNames:
-  - KiwiSoda
+  - Dancing Script
   fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0

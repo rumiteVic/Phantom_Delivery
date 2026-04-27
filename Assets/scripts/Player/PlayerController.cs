@@ -1,5 +1,5 @@
 using UnityEngine;
-
+using System.Collections;
 public class PlayerController : MonoBehaviour
 {
         public enum Repartidor{
@@ -57,6 +57,12 @@ public class PlayerController : MonoBehaviour
 
     public AudioSource aud;
     
+    [Header("Pose Effect")]
+    public float poseDuration = 0.2f;
+    public AnimationCurve poseCurve;
+
+    public ParticleSystem ghostPos;
+    public ParticleSystem ghostDes;
     void Start()
     {
         input = new InputSystem_Actions();
@@ -141,6 +147,40 @@ public class PlayerController : MonoBehaviour
         escalador.SetActive(false);
     }
 
+    IEnumerator PoseEffect(Collider2D col)
+    {
+        Transform fantasmita = fantasma.transform;
+        Vector3 originalScale = fantasmita.localScale;
+
+        float time = 0f;
+        ghostPos.Play();
+
+        while (time < poseDuration)
+        {
+            float t = time / poseDuration;
+
+            float stretchY = Mathf.Lerp(1f, 1.8f, t);
+            float squashX = Mathf.Lerp(1f, 0.6f, t);
+
+            fantasmita.localScale = new Vector3(squashX, stretchY, 1f);
+
+            fantasmita.position = Vector3.Lerp(transform.position, col.transform.position, t * 0.5f);
+
+            time += Time.deltaTime;
+            yield return null;
+        }
+
+
+        fantasmita.localScale = Vector3.zero;
+
+        CambiarCuerpo(col);
+        DeleteBody del = col.GetComponent<DeleteBody>();
+        if (del != null) del.DeleteBodyThere();
+
+        aud.Play();
+        fantasmita.localScale = originalScale;
+    }
+
     public void CambiarCuerpo(Collider2D col){
         DisableAllBodies();
         if (col.CompareTag("Normal")){
@@ -185,6 +225,7 @@ public class PlayerController : MonoBehaviour
             speed = baseSpeed;
             jumpForce = baseJump;
         }
+        ghostDes.Play();
         StatsRepartidor();
     }
 
@@ -258,11 +299,7 @@ public class PlayerController : MonoBehaviour
                 Collider2D mejorCuerpo = GetNearestBody();
                 if (mejorCuerpo != null)
                 {
-                    Collider2D cuerpoAPoseer = mejorCuerpo; 
-                    CambiarCuerpo(cuerpoAPoseer);
-            
-                    DeleteBody del = cuerpoAPoseer.GetComponent<DeleteBody>();
-                    if (del != null) del.DeleteBodyThere();
+                    StartCoroutine(PoseEffect(mejorCuerpo));
                 }
             }
         else
@@ -272,7 +309,7 @@ public class PlayerController : MonoBehaviour
     }
         if (input.Player.Activate.WasPressedThisFrame()){
             if (isFantasma && currentBody != null) {
-                CambiarCuerpo(currentBody);
+                StartCoroutine(PoseEffect(currentBody));
             }
             else if (!isFantasma){
                 if(carriedPackage != null) {
