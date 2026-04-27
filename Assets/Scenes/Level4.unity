@@ -237,7 +237,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -15
-  m_Sprite: {fileID: -1955448553306655712, guid: d3bc3fed2f91a4f4e9e2b817699a14a4, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 36dfe4cc3c5eb3746a9fee1060da2847, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -257,8 +257,8 @@ Transform:
   m_GameObject: {fileID: 196270731}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 12, y: 12, z: 1.2}
+  m_LocalPosition: {x: 3.7, y: -8.9, z: 0}
+  m_LocalScale: {x: 7.104111, y: 7.104111, z: 0.71041113}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
@@ -16748,7 +16748,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  m_IsOn: 1
+  m_IsOn: 0
 --- !u!222 &3181883740222256973
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -22797,6 +22797,15 @@ MonoBehaviour:
   pesadoBody: {fileID: 7819578854992354306, guid: ed5b298e12a86384f83a091d9ab39adf, type: 3}
   escaladorBody: {fileID: 3570308761684899865, guid: a14228299568b7748a9f46df0e07ff79, type: 3}
   aud: {fileID: 7348154086384285564}
+  poseDuration: 0.2
+  poseCurve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  ghostPos: {fileID: 0}
+  ghostDes: {fileID: 0}
 --- !u!224 &3974594249852293649
 RectTransform:
   m_ObjectHideFlags: 0
@@ -23118,6 +23127,10 @@ MonoBehaviour:
   fadeUI: {fileID: 0}
   aud: {fileID: 4271714053992839611}
   winning: {fileID: 8300000, guid: b6e50a518a7bde14aae8623196000dc1, type: 3}
+  minPitch: 0.5
+  maxPitch: 1
+  volumeMin: 0.7
+  volumeMax: 1
 --- !u!82 &4271714053992839611
 AudioSource:
   m_ObjectHideFlags: 0
@@ -23813,6 +23826,11 @@ MonoBehaviour:
   howToPlay: {fileID: 6763688987683466894}
   howToControles: {fileID: 7772807916304761069}
   audioClick: {fileID: 6971870035439525756}
+  minPitch: 0.5
+  maxPitch: 1
+  volumeMin: 0.7
+  volumeMax: 1
+  noMostrar: []
 --- !u!224 &4690969728165080614
 RectTransform:
   m_ObjectHideFlags: 0

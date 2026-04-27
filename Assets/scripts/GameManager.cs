@@ -1,6 +1,7 @@
 using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
+using UnityEngine.Audio;
 public class GameManager : MonoBehaviour
 {
     
@@ -31,6 +32,12 @@ public class GameManager : MonoBehaviour
 
     public AudioSource aud;
     public AudioClip winning;
+
+
+    public float minPitch;
+    public float maxPitch;
+    public float volumeMin;
+    public float volumeMax;
 
     void Awake(){
         Instance = this;
@@ -111,7 +118,7 @@ public class GameManager : MonoBehaviour
         int currentLevelIndex = SceneManager.GetActiveScene().buildIndex;
         string starLevel = "Stars_Level_" + currentLevelIndex;
         int previousStars = PlayerPrefs.GetInt(starLevel, 0);
-        if (currentLevelIndex == 2) 
+        if (EsNivelConTutorial(currentLevelIndex))
         {
             MarcarTutorialComoHecho();
         }
@@ -132,16 +139,41 @@ public class GameManager : MonoBehaviour
     {
         int escenaActual = SceneManager.GetActiveScene().buildIndex;
 
-        // Solo si es la escena 2 (tu Nivel 1) Y no se ha completado antes
-        if (escenaActual == 2 && PlayerPrefs.GetInt("TutorialCompletado", 0) == 0)
+        if (EsNivelConTutorial(escenaActual))
         {
-            OneButton.Instance.Tutorial();
+            string key = "Tutorial_" + escenaActual;
+
+            if (PlayerPrefs.GetInt(key, 0) == 0)
+            {
+                if(escenaActual == 2)
+                {
+                    OneButton.Instance.Tutorial();
+                }
+                else
+                {
+                    OneButton.Instance.Show();
+                }
+                
+            }
         }
     }
 
     public void MarcarTutorialComoHecho()
     {
-        PlayerPrefs.SetInt("TutorialCompletado", 1);
+        int escenaActual = SceneManager.GetActiveScene().buildIndex;
+        string key = "Tutorial_" + escenaActual;
+
+        PlayerPrefs.SetInt(key, 1);
         PlayerPrefs.Save();
+    }
+    public void Randomizador()
+    {
+        aud.pitch = 1.0f + Random.Range(minPitch, maxPitch);
+        aud.volume = 1.0f + Random.Range(volumeMin, volumeMax);  
+    }
+
+    bool EsNivelConTutorial(int level)
+    {
+        return level == 2 || level == 3 || level == 4 || level == 7;
     }
 }

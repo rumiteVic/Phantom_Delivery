@@ -41383,6 +41383,11 @@ MonoBehaviour:
   howToPlay: {fileID: 2254181675568040751}
   howToControles: {fileID: 2975624365116564812}
   audioClick: {fileID: 2473615142502644445}
+  minPitch: 0.5
+  maxPitch: 1
+  volumeMin: 0.7
+  volumeMax: 1
+  noMostrar: []
 --- !u!222 &293284330109086141
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -47492,6 +47497,10 @@ MonoBehaviour:
   fadeUI: {fileID: 363539699825724819}
   aud: {fileID: 6854653394530821975}
   winning: {fileID: 8300000, guid: b6e50a518a7bde14aae8623196000dc1, type: 3}
+  minPitch: 0.5
+  maxPitch: 1
+  volumeMin: 0.7
+  volumeMax: 1
 --- !u!1 &5788181436527495678
 GameObject:
   m_ObjectHideFlags: 0
@@ -50054,7 +50063,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  m_IsOn: 1
+  m_IsOn: 0
 --- !u!222 &7979630190269321964
 CanvasRenderer:
   m_ObjectHideFlags: 0

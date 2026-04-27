@@ -201,17 +201,7 @@ public class HUD : MonoBehaviour
 
     public void TotalReset()
     {
-        // Borramos solo el progreso de niveles
-        PlayerPrefs.DeleteKey("LevelReached");
-        PlayerPrefs.DeleteKey("TutorialCompletado");
-
-        // Para las estrellas, tendrías que hacer un bucle si tienes muchos niveles
-        for (int i = 2; i <= 20; i++) 
-        {
-            PlayerPrefs.DeleteKey("Stars_Level_" + i);
-        }
-    
+        PlayerPrefs.DeleteAll();
         PlayerPrefs.Save();
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }

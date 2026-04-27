@@ -85,16 +85,16 @@ public class PlayerController : MonoBehaviour
             case Repartidor.Fantasma:
                 baseSpeed = 7f;
                 speed = 7f;
-                jumpForce = 20f;
-                baseJump = 20f;
+                jumpForce = 19f;
+                baseJump = 19f;
                 throwForce = 0f;
                 break;
                 
             case Repartidor.Normal:
                 baseSpeed = 7f;
                 speed = 7f;
-                jumpForce = 22f;
-                baseJump = 22f;
+                jumpForce = 23f;
+                baseJump = 23f;
                 throwForce = 5f;
                 break;
 
@@ -151,7 +151,7 @@ public class PlayerController : MonoBehaviour
     {
         Transform fantasmita = fantasma.transform;
         Vector3 originalScale = fantasmita.localScale;
-
+        input.Player.Disable();
         float time = 0f;
         ghostPos.Play();
 
@@ -172,7 +172,7 @@ public class PlayerController : MonoBehaviour
 
 
         fantasmita.localScale = Vector3.zero;
-
+        input.Player.Enable();
         CambiarCuerpo(col);
         DeleteBody del = col.GetComponent<DeleteBody>();
         if (del != null) del.DeleteBodyThere();
