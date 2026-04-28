@@ -7466,9 +7466,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Manual del empleado
+  m_text: 'Employee handbook
 
-    Protocolo de entrega'
+    Delivery Protocol'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: daf31105dc0a304448b575ac6ef5922a, type: 2}
   m_sharedMaterial: {fileID: 4501002134558042300, guid: daf31105dc0a304448b575ac6ef5922a, type: 2}
@@ -8730,14 +8730,12 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'RECORDATORIO:
+  m_text: 'REMINDER:
 
-    Los fantasmas no pueden interactuar con el mundo, un
-    cuerpo si.
+    Ghosts can''t interact with the material world, but a
+    body can.
 
-    La empresa agradece tu colaboracion
-
-'
+    Our company apprecitates your collaboration.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: daf31105dc0a304448b575ac6ef5922a, type: 2}
   m_sharedMaterial: {fileID: 4501002134558042300, guid: daf31105dc0a304448b575ac6ef5922a, type: 2}
@@ -8854,17 +8852,17 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Bienvenido a la empresa!!
+  m_text: 'Welcome to our company!!
 
-    Tu trabajo es simple:
+    Your job is simple:
 
-    1.- Posee el
-    cuerpo de un repartidor
+    1.- Possess the
+    body of a deliveryman.
 
-    2.- Completa la entrega que le correspondia
+    2.- Complete the delivery that corresponded to it.
 
     3.-
-    Entierralo en zona autorizada
+    Bury it in an authorized area.
 
 '
   m_isRightToLeft: 0

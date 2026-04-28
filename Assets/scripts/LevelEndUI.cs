@@ -64,9 +64,9 @@ public class LevelEndUI : MonoBehaviour
     {
         switch (stars)
         {
-            case 1: return "Entrega completada... pero tardaste demasiado.";
-            case 2: return "Buen trabajo. La empresa está satisfecha.";
-            case 3: return "Entrega perfecta. Nadie lo hizo mejor.";
+            case 1: return "Delivery done... improve your performance.";
+            case 2: return "Nice job. The company it's satisfied";
+            case 3: return "Perfect delivery. Nobody did it better.";
             default: return "";
         }
     }
