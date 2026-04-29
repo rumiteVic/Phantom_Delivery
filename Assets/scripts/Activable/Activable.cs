@@ -2,17 +2,17 @@ using UnityEngine;
 
 public class Activable : MonoBehaviour
 {
-    public bool activa = false;
+    public bool on = false;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     public Transform puntoA;
     public Transform puntoB;
-    public bool isPlat = true;
+
     public float velocidad = 2f;
 
     void Update()
     {
-        if(isPlat){
-            if (activa){
+
+        if (on){
             transform.position = Vector3.MoveTowards(
                 transform.position,
                 puntoB.position,
@@ -27,11 +27,11 @@ public class Activable : MonoBehaviour
                 velocidad * Time.deltaTime
             );
         }
-        }
-        
     }
-
-    public void Activate(){
-        activa = !activa;
+    
+    public void Activate()
+    {
+        on = !on;
     }
 }
+

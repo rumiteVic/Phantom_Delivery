@@ -1,89 +1,75 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Audio;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-using TMPro;
+using UnityEngine.Audio;
 public class LevelsManager : MonoBehaviour
 {
     public BotonSelector[] allButtons;
+    public GameObject[] botonesProtocolos; // Asegúrate de arrastrar los 7 aquí
+    public GameObject[] panelesProtocolos; // Arrastra los objetos de protocolo01, 02...
+    public GameObject manu;
+    public GameObject selector;
     public AudioSource aud;
 
-    public GameObject menuOptions;
-
-    public GameObject howToJuego;
-    public GameObject howToPlay;
-
     public AudioMixer masterMixer;
-    public Slider volumeSlider;
-    public GameObject selector;
+    public GameObject optionsMenu;
 
-    public GameObject button1;
-    public GameObject button2;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    public GameObject guia;
+    public GameObject manual;
+
     void Start()
     {
+        // 1. Cargar progreso (Default nivel 2 si no hay nada)
         int nivelLlegado = PlayerPrefs.GetInt("LevelReached", 2);
+
+        // 2. Configurar Botones de Niveles
         for (int i = 0; i < allButtons.Length; i++)
         {
-            int levelNum = i + 2;
+            int levelNum = i + 2; // El primer botón carga la escena 2
             int stars = PlayerPrefs.GetInt("Stars_Level_" + levelNum, 0);
             bool unlocked = levelNum <= nivelLlegado;
 
             allButtons[i].BotonSeleccionador(levelNum, stars, unlocked);
         }
-        float savedValue = PlayerPrefs.GetFloat("masterVolume", 1f);
 
-        volumeSlider.value = savedValue;
-        SetMasterVolume(savedValue);
-        if (PlayerPrefs.HasKey("fullscreen"))
+        if(nivelLlegado >= 2)
         {
-            bool fs = PlayerPrefs.GetInt("fullscreen") == 1;
-            Screen.fullScreen = fs;
+            botonesProtocolos[0].SetActive(true);
+            botonesProtocolos[1].SetActive(true);
+            botonesProtocolos[2].SetActive(true);
+            botonesProtocolos[3].SetActive(true);
+        }
+        else if(nivelLlegado >= 3)
+        {
+            botonesProtocolos[4].SetActive(true);
+        }
+        else if(nivelLlegado >= 4)
+        {
+            botonesProtocolos[5].SetActive(true);
+        }
+        else if(nivelLlegado >= 7)
+        {
+            botonesProtocolos[6].SetActive(true);
         }
 
-        bool tutorialHecho = PlayerPrefs.GetInt("TutorialCompletado", 0) == 1;
+    }
+
+    // Función única para mostrar protocolos (sustituye a las 7 funciones anteriores)
+    public void MostrarProtocolo(int indice)
+    {
+        aud.Play();
+        manu.SetActive(false);
         
-        button1.SetActive(tutorialHecho);
-        button2.SetActive(tutorialHecho);
+        for (int i = 0; i < panelesProtocolos.Length; i++)
+        {
+            panelesProtocolos[i].SetActive(i == indice);
+        }
     }
 
-    public void Home()
+    public void SeePortadaManual()
     {
-        aud.Play();
-        SceneManager.LoadScene(0);
-    }
-
-    public void AbrirMenuOptions()
-    {
-        aud.Play();
-        menuOptions.SetActive(true);
-        selector.SetActive(false);
-    }
-
-    public void Manual()
-    {
-        aud.Play();
-        howToJuego.SetActive(true);
-        howToPlay.SetActive(false);
-        selector.SetActive(false);
-    }
-    public void Instrucciones()
-    {
-        aud.Play();
-        howToJuego.SetActive(false);
-        howToPlay.SetActive(true);
-        selector.SetActive(false);
-    }
-
-    public void Return()
-    {
-        aud.Play();
-        howToPlay.SetActive(false);
-        howToJuego.SetActive(false);
-        menuOptions.SetActive(false);
-        selector.SetActive(true);
+        manu.SetActive(true);
+        foreach(var p in panelesProtocolos) p.SetActive(false);
     }
 
     public void SetMasterVolume(float value){
@@ -103,5 +89,39 @@ public class LevelsManager : MonoBehaviour
         Screen.fullScreen = !Screen.fullScreen;
         PlayerPrefs.SetInt("fullscreen", Screen.fullScreen ? 1 : 0);
         PlayerPrefs.Save();
+    }
+
+    public void Home()
+    {
+        SceneManager.LoadScene(0);
+    }
+
+    public void AbrirMenuOptions()
+    {
+        optionsMenu.SetActive(true);
+    }
+
+    public void Manual()
+    {
+        guia.SetActive(true);
+    }
+
+    public void Instrucciones()
+    {
+        manual.SetActive(true);
+    }
+
+    public void Return()
+    {
+        optionsMenu.SetActive(false);
+        guia.SetActive(false);
+        manual.SetActive(false);
+    }
+
+    public void ExitManual()
+    {
+        optionsMenu.SetActive(false);
+        guia.SetActive(false);
+        manual.SetActive(false);
     }
 }

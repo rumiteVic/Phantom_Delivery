@@ -2,33 +2,50 @@ using UnityEngine;
 
 public class Palanca : MonoBehaviour
 {
-    private InputSystem_Actions input;
-    public bool canActivar = false;
     public bool on = true;
     public Activable[] act;
 
+    public GameObject pal_on;
+    public GameObject pal_off;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        input = new InputSystem_Actions();
-        input.Player.Enable();
+        
     }
 
-    void Update(){
-        if(input.Player.Activate.WasPressedThisFrame() && canActivar && on){
-            foreach (var item in act)
-            {
-                item.Activate();
-            }
-        }
+    void Update()
+    {
+        
     }
 
     private void OnTriggerEnter2D(Collider2D col){
-        if (col.gameObject.CompareTag("Normal") || col.gameObject.CompareTag("Pesado") || col.gameObject.CompareTag("Escalador"))
-        canActivar = true;
+        if (col.gameObject.CompareTag("Pakete"))
+        {
+            on = !on;
+            HazCosa();
+        }
+            
     }
 
-    private void OnTriggerExit2D(Collider2D col){
-        canActivar = false;
+    public void HazCosa()
+    {
+        if(on){
+            foreach (Activable item in act)
+            {
+                item.Activate();
+            }
+            pal_on.SetActive(true);
+            pal_off.SetActive(false);
+        }
+        else
+        {
+            foreach (Activable item in act)
+            {
+                item.Activate();
+            }
+            pal_on.SetActive(false);
+            pal_off.SetActive(true);
+        }
     }
+    
 }

@@ -1,13 +1,10 @@
 fileFormatVersion: 2
-guid: 7a473bef59f376f468227e03e8c17d16
+guid: 8988e58dfa1b1c342bc0dcb0060744cf
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7133884061806055070
-    second: phantom delivery_0
-  - first:
-      213: -4610358487285079106
-    second: phantom delivery_1
+      213: -7635079070381702679
+    second: farolillo_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -40,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -49,12 +46,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -99,17 +96,30 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: phantom delivery_0
+      name: farolillo_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 91
-        width: 1024
-        height: 849
+        x: 2
+        y: 0
+        width: 13
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -118,30 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e9e45ccd1c5a00360800000000000000
-      internalID: 7133884061806055070
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: phantom delivery_1
-      rect:
-        serializedVersion: 2
-        x: 344
-        y: 896
-        width: 88
-        height: 54
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: eb36a2ee167b400c0800000000000000
-      internalID: -4610358487285079106
+      spriteID: 9e101e1b900ca0690800000000000000
+      internalID: -7635079070381702679
       vertices: []
       indices: 
       edges: []
@@ -150,7 +138,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -160,8 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      phantom delivery_0: 7133884061806055070
-      phantom delivery_1: -4610358487285079106
+      farolillo_0: -7635079070381702679
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

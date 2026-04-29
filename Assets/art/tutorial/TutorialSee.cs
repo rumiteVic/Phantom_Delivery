@@ -9,7 +9,6 @@ public class TutorialSee : MonoBehaviour
     public SpriteRenderer[] sprites;
 
     public bool disableThem;
-    public bool lanzar = false;
 
     void Start()
     {
@@ -37,23 +36,7 @@ public class TutorialSee : MonoBehaviour
     {
         if (other.CompareTag("Player") && !disableThem)
         {
-            if (lanzar)
-            {
-                PlayerController player = other.GetComponent<PlayerController>();
-
-                if (player != null)
-                {
-                    // Si tiene paquete
-                    if (player.carriedPackage != null)
-                    {
-                        Show();
-                    }
-                }
-            }
-            else
-            {
-                Show();
-            }
+            Show();
         }
     }
 

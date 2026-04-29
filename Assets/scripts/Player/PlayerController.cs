@@ -101,8 +101,8 @@ public class PlayerController : MonoBehaviour
             case Repartidor.Heavy:
                 baseSpeed = 5f;
                 speed = 5f;
-                baseJump = 16f;
-                jumpForce = 16f;
+                baseJump = 17f;
+                jumpForce = 17f;
                 throwForce = 7f;
                 break;
 

@@ -3,50 +3,45 @@ using UnityEngine;
 public class CameraScript : MonoBehaviour
 {
     public Transform player;
-
-    public float zoneHeight = 10f; // altura de cada "pantalla"
     public float smoothSpeed = 5f;
+    public float blockSize = 20f; // Ahora representa la altura del salto
 
-    private int currentZone = 0;
+    private float playerStartY;
+    private float cameraStartY;
     private float targetY;
-    public float startY = 0f;
+
     void Start()
     {
-        transform.position = new Vector3(
-            transform.position.x,
-            startY,
-            transform.position.z
-        );
+        if (player == null) return;
 
-        // Zona inicial SIEMPRE la 0
-        currentZone = 0;
-        targetY = startY;
+        // Guardamos las posiciones iniciales originales en Y
+        playerStartY = player.position.y;
+        cameraStartY = transform.position.y;
+        
+        targetY = cameraStartY;
     }
 
     void LateUpdate()
-{
-    float upperLimit = (currentZone + 1) * zoneHeight;
-    float lowerLimit = currentZone * zoneHeight;
-
-    // SUBIR (cuando pasa arriba)
-    if (player.position.y > upperLimit)
     {
-        currentZone++;
-        targetY = currentZone * zoneHeight;
-    }
-    
-    else if (player.position.y < lowerLimit)
-    {
-        currentZone--;
-        targetY = currentZone * zoneHeight;
-    }
+        if (player == null) return;
 
-    Vector3 newPos = new Vector3(
-        transform.position.x,
-        Mathf.Lerp(transform.position.y, targetY, smoothSpeed * Time.deltaTime),
-        transform.position.z
-    );
+        // 1. Calculamos cuánto se ha alejado el jugador de su inicio en vertical
+        float playerDeltaY = player.position.y - playerStartY;
 
-    transform.position = newPos;
-}
+        // 2. Calculamos en qué "bloque" de altura está el jugador
+        int currentBlock = (int)(playerDeltaY / blockSize);
+
+        // 3. El objetivo de la cámara es su inicio + (número de bloque * tamaño del bloque)
+        targetY = cameraStartY + (currentBlock * blockSize);
+
+        // 4. Interpolación suave para el movimiento vertical
+        float newY = Mathf.Lerp(transform.position.y, targetY, smoothSpeed * Time.deltaTime);
+
+        // 5. Aplicamos el cambio: X y Z se mantienen, Y es la que cambia
+        transform.position = new Vector3(
+            transform.position.x,
+            newY,
+            transform.position.z
+        );
+    }
 }
