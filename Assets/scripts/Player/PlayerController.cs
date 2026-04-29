@@ -355,10 +355,10 @@ public class PlayerController : MonoBehaviour
 
         if (isClimbing){
             if(!iz){
-                dir = new Vector2(0.3f, 1.5f);
+                dir = new Vector2(0f, 1.5f);
             }
             else{
-                dir = new Vector2(-0.3f, 1.5f);
+                dir = new Vector2(0f, 1.5f);
             }
 
             carriedPackage.OnThrown(dir * (throwForce * 1.5f), rb.linearVelocity);
