@@ -16928,7 +16928,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2244168350795312564}
         m_TargetAssemblyTypeName: HUD, Assembly-CSharp
-        m_MethodName: ReturnMainMenu
+        m_MethodName: ReturnSelector
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

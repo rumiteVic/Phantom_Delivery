@@ -31460,7 +31460,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 6038225823084519648}
         m_TargetAssemblyTypeName: HUD, Assembly-CSharp
-        m_MethodName: ReturnMainMenu
+        m_MethodName: ReturnSelector
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

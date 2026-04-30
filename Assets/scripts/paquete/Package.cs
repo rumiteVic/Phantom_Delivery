@@ -12,7 +12,6 @@ public class Package : MonoBehaviour
 
     [Header("Behavior")]
     public bool breaksOnFall;
-    public float maxFallHeight = 1f;
 
     [Header("Throw")]
     public float throwForceMultiplier = 1f;
@@ -26,6 +25,10 @@ public class Package : MonoBehaviour
     public AudioClip cae;
     public AudioSource aud;
     public GameObject trail;
+    public float max = 16f;
+    public bool broken = false;
+
+    public ParticleSystem part;
     void Awake() {
         rb = GetComponent<Rigidbody2D>();
         col = GetComponent<Collider2D>();
@@ -91,28 +94,25 @@ public class Package : MonoBehaviour
         trail.SetActive(true);
     }
 
-    private void OnCollisionEnter2D(Collision2D col) {
+    private void OnCollisionEnter2D(Collision2D col)
+    {
+        float impactForce = col.relativeVelocity.magnitude;
+
         aud.loop = false;
         aud.Stop();
         aud.clip = cae;
         aud.Play();
-        if (breaksOnFall) {
-            float fall = startY - transform.position.y;
-            if (fall > maxFallHeight) {
-                Break();
-            }
-        }
-    }
-
-    public bool ShouldBreak()
-    {
-        if (!breaksOnFall) return false;
-
-        float fall = startY - transform.position.y;
-        return fall > maxFallHeight;
+        //Si choca muy fuerte se rompe
+        if (breaksOnFall && impactForce > max)
+        {
+            Break();
+        }        
     }
 
     public void Break() {
+        if (broken) return;
+        Instantiate(part, transform.position, transform.rotation);
+        broken = true;
         Debug.Log("Paquete roto");
         Destroy(gameObject);
         FinalNivel.Instance.EjecutarMuerte();

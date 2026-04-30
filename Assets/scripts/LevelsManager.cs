@@ -5,8 +5,8 @@ using UnityEngine.Audio;
 public class LevelsManager : MonoBehaviour
 {
     public BotonSelector[] allButtons;
-    public GameObject[] botonesProtocolos; // Asegúrate de arrastrar los 7 aquí
-    public GameObject[] panelesProtocolos; // Arrastra los objetos de protocolo01, 02...
+    public GameObject[] botonesProtocolos; 
+    public GameObject[] panelesProtocolos;
     public GameObject manu;
     public GameObject selector;
     public AudioSource aud;
@@ -19,13 +19,13 @@ public class LevelsManager : MonoBehaviour
 
     void Start()
     {
-        // 1. Cargar progreso (Default nivel 2 si no hay nada)
+        
         int nivelLlegado = PlayerPrefs.GetInt("LevelReached", 2);
 
-        // 2. Configurar Botones de Niveles
+        
         for (int i = 0; i < allButtons.Length; i++)
         {
-            int levelNum = i + 2; // El primer botón carga la escena 2
+            int levelNum = i + 2; 
             int stars = PlayerPrefs.GetInt("Stars_Level_" + levelNum, 0);
             bool unlocked = levelNum <= nivelLlegado;
 
@@ -50,6 +50,10 @@ public class LevelsManager : MonoBehaviour
         else if(nivelLlegado >= 7)
         {
             botonesProtocolos[6].SetActive(true);
+        }
+        else if(nivelLlegado >= 8)
+        {
+            botonesProtocolos[7].SetActive(true);
         }
 
     }

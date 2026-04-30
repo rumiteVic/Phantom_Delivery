@@ -3,7 +3,7 @@ using UnityEngine.Audio;
 public class LugarEntrega : MonoBehaviour
 {
 
-    private Collider2D collider;
+    private Collider2D colliderT;
     public GameManager man;
 
     public GameObject entre;
@@ -13,32 +13,41 @@ public class LugarEntrega : MonoBehaviour
     public AudioSource aud;
 
     void Start(){
-        collider = GetComponent<Collider2D>();
+        colliderT = GetComponent<Collider2D>();
         man = GameManager.Instance;
         entre.SetActive(false);
     }
-    private void OnTriggerEnter2D(Collider2D col) {
+    private void OnTriggerEnter2D(Collider2D col)
+    {
 
-    if (col.CompareTag("Pakete")){
+        if (col.CompareTag("Pakete")){
 
-        Package paquete = col.GetComponent<Package>();
+            Package paquete = col.GetComponent<Package>();
+            Rigidbody2D rb = col.GetComponent<Rigidbody2D>();
 
-        if (paquete != null && paquete.ShouldBreak())
-        {
-            paquete.Break();
-            return;
+            //Si paquete es fragil y entra muy fuertemente
+            //Paquete se rompe :(
+            if (paquete != null && rb != null)
+            {
+                float speed = rb.linearVelocity.magnitude;
+
+                if (paquete.breaksOnFall && speed > paquete.max)
+                {
+                    paquete.Break();
+                    return;
+                }
+            }
+
+            // Entrega normal
+            aud.Play();
+            man.UpdatePakage();
+            Destroy(col.gameObject);
+
+            entre.SetActive(true);
+            noEntre.SetActive(false);
+            colliderT.enabled = false;
+            flecha.SetActive(false);
+            Instantiate(part, transform.position, transform.rotation);
         }
-
-        // Entrega normal
-        aud.Play();
-        man.UpdatePakage();
-        Destroy(col.gameObject);
-
-        entre.SetActive(true);
-        noEntre.SetActive(false);
-        collider.enabled = false;
-        flecha.SetActive(false);
-        Instantiate(part, transform.position, transform.rotation);
     }
-}
 }
