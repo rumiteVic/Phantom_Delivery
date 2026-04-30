@@ -21,7 +21,18 @@ public class DeleteBody : MonoBehaviour
             if(entierro != null){
                 canCount = true;
                 DeleteBodyThere();
-                entierro.Entierra();
+                if (CompareTag("Normal"))
+                {
+                    entierro.EntierraRosa();
+                }
+                else if (CompareTag("Escalador"))
+                {
+                    entierro.EntierraAzul();
+                }
+                else if(CompareTag("Pesado"))
+                {
+                    entierro.EntierraMorado();
+                }
             }
         }
     }
