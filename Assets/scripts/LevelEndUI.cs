@@ -13,6 +13,10 @@ public class LevelEndUI : MonoBehaviour
     public float delayBetweenStars = 0.5f;
     public float typingSpeed = 0.02f;
 
+    public string frase1 = "Delivery done... improve your performance.";
+    public string frase2 = "Nice job. The company it's satisfied";
+    public string frase3 = "Perfect delivery. Nobody did it better.";
+
     public void ShowResult(int stars)
     {
         StartCoroutine(AnimateStarsSequence(stars));
@@ -64,9 +68,9 @@ public class LevelEndUI : MonoBehaviour
     {
         switch (stars)
         {
-            case 1: return "Delivery done... improve your performance.";
-            case 2: return "Nice job. The company it's satisfied";
-            case 3: return "Perfect delivery. Nobody did it better.";
+            case 1: return frase1;
+            case 2: return frase2;
+            case 3: return frase3;
             default: return "";
         }
     }

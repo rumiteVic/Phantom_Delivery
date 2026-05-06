@@ -1,29 +1,33 @@
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 
 public class Luciernagas : MonoBehaviour
 {
     public ParticleSystem part;
+    public Light2D luz;
     public CircleCollider2D col;
 
     public float tiempoRestante = 5f;
+    private float tiempoMaximo;
     public bool timerActivo = false;
     
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    public float fadeSpeed = 2f;
+    private float intensidadOriginal;
+
     void Start()
     {
-        
+        tiempoMaximo = tiempoRestante;
+        if (luz != null) intensidadOriginal = luz.intensity;
     }
 
-    // Update is called once per frame
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.CompareTag("Pakete") || collision.CompareTag("Player"))
         {
-            var main = part.main;
-            main.loop = false;
+            part.Stop();
             timerActivo = true;
+            tiempoRestante = tiempoMaximo;
         }
-         
     }
 
     void Update()
@@ -33,6 +37,7 @@ public class Luciernagas : MonoBehaviour
             if (tiempoRestante > 0)
             {
                 tiempoRestante -= Time.deltaTime;
+                luz.intensity = Mathf.MoveTowards(luz.intensity, 0, fadeSpeed * Time.deltaTime);
             }
             else
             {
@@ -41,12 +46,17 @@ public class Luciernagas : MonoBehaviour
                 ActivateAgain();
             }
         }
+        else
+        {
+            if (luz != null && luz.intensity < intensidadOriginal)
+            {
+                luz.intensity = Mathf.MoveTowards(luz.intensity, intensidadOriginal, fadeSpeed * Time.deltaTime);
+            }
+        }
     }
 
     void ActivateAgain()
     {
-        var main = part.main;
-        main.loop = true;
         part.Play();
     }
 }

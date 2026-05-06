@@ -7,6 +7,7 @@ public class Palanca : MonoBehaviour
 
     public GameObject pal_on;
     public GameObject pal_off;
+    public AudioSource sound;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -21,6 +22,7 @@ public class Palanca : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D col){
         if (col.gameObject.CompareTag("Pakete"))
         {
+            sound.Play();
             on = !on;
             HazCosa();
         }

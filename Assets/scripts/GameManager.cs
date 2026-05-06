@@ -37,7 +37,7 @@ public class GameManager : MonoBehaviour
     public float minPitch;
     public float maxPitch;
     public float volumeMin;
-    public float volumeMax;
+    public float volumeMax = 0.85f;
 
     void Awake(){
         Instance = this;
@@ -174,6 +174,6 @@ public class GameManager : MonoBehaviour
 
     bool EsNivelConTutorial(int level)
     {
-        return level == 2 || level == 3 || level == 4 || level == 7;
+        return level == 2 || level == 3 || level == 5 || level == 7 || level == 8;
     }
 }

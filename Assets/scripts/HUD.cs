@@ -23,6 +23,19 @@ public class HUD : MonoBehaviour
 
     public GameObject cont;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
+    void Awake()
+    {
+        float savedValue = PlayerPrefs.GetFloat("masterVolume", 1f);
+
+        volumeSlider.value = savedValue;
+        SetMasterVolume(savedValue);
+        if (PlayerPrefs.HasKey("fullscreen"))
+        {
+            bool fs = PlayerPrefs.GetInt("fullscreen") == 1;
+            Screen.fullScreen = fs;
+        }
+    }
+    
     void Start()
     {
         if(isMainMenu){
@@ -40,15 +53,6 @@ public class HUD : MonoBehaviour
             optionsMenu.gameObject.SetActive(false);
             hudMenu.gameObject.SetActive(true);
             creditosMenu.gameObject.SetActive(false);
-        }
-        float savedValue = PlayerPrefs.GetFloat("masterVolume", 1f);
-
-        volumeSlider.value = savedValue;
-        SetMasterVolume(savedValue);
-        if (PlayerPrefs.HasKey("fullscreen"))
-        {
-            bool fs = PlayerPrefs.GetInt("fullscreen") == 1;
-            Screen.fullScreen = fs;
         }
     }
 

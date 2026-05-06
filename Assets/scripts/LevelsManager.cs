@@ -17,11 +17,28 @@ public class LevelsManager : MonoBehaviour
     public GameObject guia;
     public GameObject manual;
 
+    public Slider volumeSlider;
+
+
+    void Awake()
+    {
+        float savedValue = PlayerPrefs.GetFloat("masterVolume", 1f);
+
+        volumeSlider.value = savedValue;
+        SetMasterVolume(savedValue);
+        if (PlayerPrefs.HasKey("fullscreen"))
+        {
+            bool fs = PlayerPrefs.GetInt("fullscreen") == 1;
+            Screen.fullScreen = fs;
+        }
+    }
+    
     void Start()
     {
         
         int nivelLlegado = PlayerPrefs.GetInt("LevelReached", 2);
 
+        foreach(GameObject b in botonesProtocolos) b.SetActive(false);
         
         for (int i = 0; i < allButtons.Length; i++)
         {
@@ -39,22 +56,23 @@ public class LevelsManager : MonoBehaviour
             botonesProtocolos[2].SetActive(true);
             botonesProtocolos[3].SetActive(true);
         }
-        else if(nivelLlegado >= 3)
+        if(nivelLlegado >= 3)
         {
             botonesProtocolos[4].SetActive(true);
         }
-        else if(nivelLlegado >= 4)
+        if(nivelLlegado >= 4)
         {
             botonesProtocolos[5].SetActive(true);
         }
-        else if(nivelLlegado >= 7)
+        if(nivelLlegado >= 7)
         {
             botonesProtocolos[6].SetActive(true);
         }
-        else if(nivelLlegado >= 8)
+        if(nivelLlegado >= 8)
         {
             botonesProtocolos[7].SetActive(true);
         }
+        optionsMenu.SetActive(false);
 
     }
 

@@ -24,7 +24,7 @@ public class Player : MonoBehaviour
     void Update(){
         anim.SetFloat("Speed", Mathf.Abs(cont.move.x));
         anim.SetBool("IsGrounded", cont.grounded);
-        anim.SetBool("IsClimbing", cont.isClimbing);
+        anim.SetBool("IsClimbing", cont.isWallHolding);
         anim.SetFloat("VelY", cont.rb.linearVelocity.y);
         if(cont.move.x >0){
             sprite.flipX = false;

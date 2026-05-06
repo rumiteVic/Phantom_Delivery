@@ -4997,6 +4997,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   part: {fileID: 8384110617908386879}
+  luz: {fileID: 328629316055441147}
   col: {fileID: 6998784893135882570}
   tiempoRestante: 5
   timerActivo: 0
+  fadeSpeed: 2
