@@ -1,0 +1,988 @@
+fileFormatVersion: 2
+guid: 4b9bfd70f9cb9f544aa8f8f61d350583
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 6493821750699283243
+    second: Protocol 04 - Termination of contract CONTRACT_0
+  - first:
+      213: 4654016847377757954
+    second: Protocol 04 - Termination of contract CONTRACT_1
+  - first:
+      213: -3724127437621488631
+    second: Protocol 04 - Termination of contract CONTRACT_2
+  - first:
+      213: -3889147541491851502
+    second: Protocol 04 - Termination of contract CONTRACT_3
+  - first:
+      213: 561832143182689765
+    second: Protocol 04 - Termination of contract CONTRACT_4
+  - first:
+      213: -3716064842045836966
+    second: Protocol 04 - Termination of contract CONTRACT_5
+  - first:
+      213: -6925828619184701376
+    second: Protocol 04 - Termination of contract CONTRACT_6
+  - first:
+      213: 1371332255588664173
+    second: Protocol 04 - Termination of contract CONTRACT_7
+  - first:
+      213: -1502594407753934611
+    second: Protocol 04 - Termination of contract CONTRACT_8
+  - first:
+      213: 3356929401146743247
+    second: Protocol 04 - Termination of contract CONTRACT_9
+  - first:
+      213: 6863989253782462588
+    second: Protocol 04 - Termination of contract CONTRACT_10
+  - first:
+      213: 2175982194999606468
+    second: Protocol 04 - Termination of contract CONTRACT_11
+  - first:
+      213: 3491249823003676385
+    second: Protocol 04 - Termination of contract CONTRACT_12
+  - first:
+      213: 9124235829304094476
+    second: Protocol 04 - Termination of contract CONTRACT_13
+  - first:
+      213: 7105163849180271459
+    second: Protocol 04 - Termination of contract CONTRACT_14
+  - first:
+      213: -3865335549662172242
+    second: Protocol 04 - Termination of contract CONTRACT_15
+  - first:
+      213: -2410551983602154287
+    second: Protocol 04 - Termination of contract CONTRACT_16
+  - first:
+      213: 4860652847087601671
+    second: Protocol 04 - Termination of contract CONTRACT_17
+  - first:
+      213: 3518486543298401870
+    second: Protocol 04 - Termination of contract CONTRACT_18
+  - first:
+      213: -3099196696988078519
+    second: Protocol 04 - Termination of contract CONTRACT_19
+  - first:
+      213: -6713300510148184686
+    second: Protocol 04 - Termination of contract CONTRACT_20
+  - first:
+      213: 7105135858309889904
+    second: Protocol 04 - Termination of contract CONTRACT_21
+  - first:
+      213: 1067139940045168554
+    second: Protocol 04 - Termination of contract CONTRACT_22
+  - first:
+      213: -7858955195237100548
+    second: Protocol 04 - Termination of contract CONTRACT_23
+  - first:
+      213: 1924525248418847115
+    second: Protocol 04 - Termination of contract CONTRACT_24
+  - first:
+      213: -8570365437041967477
+    second: Protocol 04 - Termination of contract CONTRACT_25
+  - first:
+      213: -299483265968631194
+    second: Protocol 04 - Termination of contract CONTRACT_26
+  - first:
+      213: -4448731164836515997
+    second: Protocol 04 - Termination of contract CONTRACT_27
+  - first:
+      213: -8276529292109476228
+    second: Protocol 04 - Termination of contract CONTRACT_28
+  - first:
+      213: 355980771775736301
+    second: Protocol 04 - Termination of contract CONTRACT_29
+  - first:
+      213: -6461736601404954058
+    second: Protocol 04 - Termination of contract CONTRACT_30
+  - first:
+      213: 4440515433764644052
+    second: Protocol 04 - Termination of contract CONTRACT_31
+  - first:
+      213: -883036782043605088
+    second: Protocol 04 - Termination of contract CONTRACT_32
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Protocol 04 - Termination of contract CONTRACT_0
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 69
+        width: 18
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b23d22df970be1a50800000000000000
+      internalID: 6493821750699283243
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Protocol 04 - Termination of contract CONTRACT_1
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 73
+        width: 12
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 20772a62aa3669040800000000000000
+      internalID: 4654016847377757954
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Protocol 04 - Termination of contract CONTRACT_2
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 73
+        width: 14
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9041946a3dd315cc0800000000000000
+      internalID: -3724127437621488631
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Protocol 04 - Termination of contract CONTRACT_3
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 71
+        width: 12
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 21f5b46aae8f60ac0800000000000000
+      internalID: -3889147541491851502
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Protocol 04 - Termination of contract CONTRACT_4
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 73
+        width: 14
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5e5fcc58b570cc700800000000000000
+      internalID: 561832143182689765
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Protocol 04 - Termination of contract CONTRACT_5
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 73
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a513a87f6b2ed6cc0800000000000000
+      internalID: -3716064842045836966
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Protocol 04 - Termination of contract CONTRACT_6
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 73
+        width: 14
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0400342c09382ef90800000000000000
+      internalID: -6925828619184701376
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Protocol 04 - Termination of contract CONTRACT_7
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 71
+        width: 8
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d63c56bbb63f70310800000000000000
+      internalID: 1371332255588664173
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Protocol 04 - Termination of contract CONTRACT_8
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 73
+        width: 14
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de89654e856b52be0800000000000000
+      internalID: -1502594407753934611
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Protocol 04 - Termination of contract CONTRACT_9
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 71
+        width: 16
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fc99a6b2185369e20800000000000000
+      internalID: 3356929401146743247
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Protocol 04 - Termination of contract CONTRACT_10
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 77
+        width: 12
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c706dcdfbd9c14f50800000000000000
+      internalID: 6863989253782462588
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Protocol 04 - Termination of contract CONTRACT_11
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 35
+        width: 18
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4ccb68a0744a23e10800000000000000
+      internalID: 2175982194999606468
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Protocol 04 - Termination of contract CONTRACT_12
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 37
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1ee87427739637030800000000000000
+      internalID: 3491249823003676385
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Protocol 04 - Termination of contract CONTRACT_13
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 37
+        width: 13
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c0fef8cf42ccf9e70800000000000000
+      internalID: 9124235829304094476
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Protocol 04 - Termination of contract CONTRACT_14
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 35
+        width: 19
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 363565540ec9a9260800000000000000
+      internalID: 7105163849180271459
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Protocol 04 - Termination of contract CONTRACT_15
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 50
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eab62b80cc19b5ac0800000000000000
+      internalID: -3865335549662172242
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Protocol 04 - Termination of contract CONTRACT_16
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 35
+        width: 9
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1d4c7c81ebffb8ed0800000000000000
+      internalID: -2410551983602154287
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Protocol 04 - Termination of contract CONTRACT_17
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 35
+        width: 16
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 708c527f202847340800000000000000
+      internalID: 4860652847087601671
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Protocol 04 - Termination of contract CONTRACT_18
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 35
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e461b409edc24d030800000000000000
+      internalID: 3518486543298401870
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Protocol 04 - Termination of contract CONTRACT_19
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 35
+        width: 12
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 94e26fa36017df4d0800000000000000
+      internalID: -3099196696988078519
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Protocol 04 - Termination of contract CONTRACT_20
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 50
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2953b2e21c095d2a0800000000000000
+      internalID: -6713300510148184686
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Protocol 04 - Termination of contract CONTRACT_21
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 35
+        width: 9
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 07f73732b638a9260800000000000000
+      internalID: 7105135858309889904
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Protocol 04 - Termination of contract CONTRACT_22
+      rect:
+        serializedVersion: 2
+        x: 119
+        y: 37
+        width: 14
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aaf160c1f1e3fce00800000000000000
+      internalID: 1067139940045168554
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Protocol 04 - Termination of contract CONTRACT_23
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 35
+        width: 16
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cf39e2273e16fe290800000000000000
+      internalID: -7858955195237100548
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Protocol 04 - Termination of contract CONTRACT_24
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 33
+        width: 26
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b899641548945ba10800000000000000
+      internalID: 1924525248418847115
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Protocol 04 - Termination of contract CONTRACT_25
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 1
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b8ef3d1fa02ff0980800000000000000
+      internalID: -8570365437041967477
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Protocol 04 - Termination of contract CONTRACT_26
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 1
+        width: 14
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 66214cb6e8508dbf0800000000000000
+      internalID: -299483265968631194
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Protocol 04 - Termination of contract CONTRACT_27
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 0
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 36fa5b2739ee242c0800000000000000
+      internalID: -4448731164836515997
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Protocol 04 - Termination of contract CONTRACT_28
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 0
+        width: 13
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c7e03b2b57cd32d80800000000000000
+      internalID: -8276529292109476228
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Protocol 04 - Termination of contract CONTRACT_29
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 1
+        width: 12
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de9ef8830a2b0f400800000000000000
+      internalID: 355980771775736301
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Protocol 04 - Termination of contract CONTRACT_30
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 0
+        width: 16
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 63a2e19fbcc4356a0800000000000000
+      internalID: -6461736601404954058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Protocol 04 - Termination of contract CONTRACT_31
+      rect:
+        serializedVersion: 2
+        x: 118
+        y: 1
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4d46e299241ef9d30800000000000000
+      internalID: 4440515433764644052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Protocol 04 - Termination of contract CONTRACT_32
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 0
+        width: 12
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0a7dfaaa9b2deb3f0800000000000000
+      internalID: -883036782043605088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Protocol 04 - Termination of contract CONTRACT_0: 6493821750699283243
+      Protocol 04 - Termination of contract CONTRACT_1: 4654016847377757954
+      Protocol 04 - Termination of contract CONTRACT_10: 6863989253782462588
+      Protocol 04 - Termination of contract CONTRACT_11: 2175982194999606468
+      Protocol 04 - Termination of contract CONTRACT_12: 3491249823003676385
+      Protocol 04 - Termination of contract CONTRACT_13: 9124235829304094476
+      Protocol 04 - Termination of contract CONTRACT_14: 7105163849180271459
+      Protocol 04 - Termination of contract CONTRACT_15: -3865335549662172242
+      Protocol 04 - Termination of contract CONTRACT_16: -2410551983602154287
+      Protocol 04 - Termination of contract CONTRACT_17: 4860652847087601671
+      Protocol 04 - Termination of contract CONTRACT_18: 3518486543298401870
+      Protocol 04 - Termination of contract CONTRACT_19: -3099196696988078519
+      Protocol 04 - Termination of contract CONTRACT_2: -3724127437621488631
+      Protocol 04 - Termination of contract CONTRACT_20: -6713300510148184686
+      Protocol 04 - Termination of contract CONTRACT_21: 7105135858309889904
+      Protocol 04 - Termination of contract CONTRACT_22: 1067139940045168554
+      Protocol 04 - Termination of contract CONTRACT_23: -7858955195237100548
+      Protocol 04 - Termination of contract CONTRACT_24: 1924525248418847115
+      Protocol 04 - Termination of contract CONTRACT_25: -8570365437041967477
+      Protocol 04 - Termination of contract CONTRACT_26: -299483265968631194
+      Protocol 04 - Termination of contract CONTRACT_27: -4448731164836515997
+      Protocol 04 - Termination of contract CONTRACT_28: -8276529292109476228
+      Protocol 04 - Termination of contract CONTRACT_29: 355980771775736301
+      Protocol 04 - Termination of contract CONTRACT_3: -3889147541491851502
+      Protocol 04 - Termination of contract CONTRACT_30: -6461736601404954058
+      Protocol 04 - Termination of contract CONTRACT_31: 4440515433764644052
+      Protocol 04 - Termination of contract CONTRACT_32: -883036782043605088
+      Protocol 04 - Termination of contract CONTRACT_4: 561832143182689765
+      Protocol 04 - Termination of contract CONTRACT_5: -3716064842045836966
+      Protocol 04 - Termination of contract CONTRACT_6: -6925828619184701376
+      Protocol 04 - Termination of contract CONTRACT_7: 1371332255588664173
+      Protocol 04 - Termination of contract CONTRACT_8: -1502594407753934611
+      Protocol 04 - Termination of contract CONTRACT_9: 3356929401146743247
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

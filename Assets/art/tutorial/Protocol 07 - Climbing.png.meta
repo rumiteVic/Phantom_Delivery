@@ -1,0 +1,676 @@
+fileFormatVersion: 2
+guid: 97efb3383c3c833489790e434afde496
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -7683308906514830667
+    second: Protocol 07 - Climbing_0
+  - first:
+      213: 4845901522750878744
+    second: Protocol 07 - Climbing_1
+  - first:
+      213: 5175670424613084113
+    second: Protocol 07 - Climbing_2
+  - first:
+      213: 7712386420923514390
+    second: Protocol 07 - Climbing_3
+  - first:
+      213: -7065585351175417424
+    second: Protocol 07 - Climbing_4
+  - first:
+      213: -6729078684806549393
+    second: Protocol 07 - Climbing_5
+  - first:
+      213: -2569585734969748464
+    second: Protocol 07 - Climbing_6
+  - first:
+      213: -1218635266924992712
+    second: Protocol 07 - Climbing_7
+  - first:
+      213: -5892133234174047605
+    second: Protocol 07 - Climbing_8
+  - first:
+      213: -5346472553533506876
+    second: Protocol 07 - Climbing_9
+  - first:
+      213: -2898324339280188798
+    second: Protocol 07 - Climbing_10
+  - first:
+      213: -6071986370775582836
+    second: Protocol 07 - Climbing_11
+  - first:
+      213: -2140377484857932417
+    second: Protocol 07 - Climbing_12
+  - first:
+      213: -2645637268558278138
+    second: Protocol 07 - Climbing_13
+  - first:
+      213: 716826848272589282
+    second: Protocol 07 - Climbing_14
+  - first:
+      213: -499347355361476894
+    second: Protocol 07 - Climbing_15
+  - first:
+      213: 1095516542348256978
+    second: Protocol 07 - Climbing_16
+  - first:
+      213: -7808417352373920559
+    second: Protocol 07 - Climbing_17
+  - first:
+      213: -1139902849132109773
+    second: Protocol 07 - Climbing_18
+  - first:
+      213: -2303583505952787983
+    second: Protocol 07 - Climbing_19
+  - first:
+      213: -5732356738866945293
+    second: Protocol 07 - Climbing_20
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Protocol 07 - Climbing_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 39
+        width: 17
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5baa697e1476f5590800000000000000
+      internalID: -7683308906514830667
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Protocol 07 - Climbing_1
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 43
+        width: 12
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8143710a2c9104340800000000000000
+      internalID: 4845901522750878744
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Protocol 07 - Climbing_2
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 43
+        width: 14
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1dbde8d44dca3d740800000000000000
+      internalID: 5175670424613084113
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Protocol 07 - Climbing_3
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 41
+        width: 12
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 61e31bd7696e70b60800000000000000
+      internalID: 7712386420923514390
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Protocol 07 - Climbing_4
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 43
+        width: 14
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0b15cf4ee8ff1fd90800000000000000
+      internalID: -7065585351175417424
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Protocol 07 - Climbing_5
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 43
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f60f37e96928d92a0800000000000000
+      internalID: -6729078684806549393
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Protocol 07 - Climbing_6
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 43
+        width: 14
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0149737636ff65cd0800000000000000
+      internalID: -2569585734969748464
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Protocol 07 - Climbing_7
+      rect:
+        serializedVersion: 2
+        x: 93
+        y: 41
+        width: 8
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8372c2c6ea9861fe0800000000000000
+      internalID: -1218635266924992712
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Protocol 07 - Climbing_8
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 43
+        width: 14
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b8a48c79a00fa3ea0800000000000000
+      internalID: -5892133234174047605
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Protocol 07 - Climbing_9
+      rect:
+        serializedVersion: 2
+        x: 123
+        y: 41
+        width: 16
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4ca72451a838dc5b0800000000000000
+      internalID: -5346472553533506876
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Protocol 07 - Climbing_10
+      rect:
+        serializedVersion: 2
+        x: 147
+        y: 47
+        width: 11
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 28ae5519e5517c7d0800000000000000
+      internalID: -2898324339280188798
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Protocol 07 - Climbing_11
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 5
+        width: 18
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c8778e80198fbbba0800000000000000
+      internalID: -6071986370775582836
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Protocol 07 - Climbing_12
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 5
+        width: 8
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f758cc9840adb42e0800000000000000
+      internalID: -2140377484857932417
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Protocol 07 - Climbing_13
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 20
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6029c03ebeec84bd0800000000000000
+      internalID: -2645637268558278138
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Protocol 07 - Climbing_14
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 5
+        width: 9
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2e120c8783ea2f900800000000000000
+      internalID: 716826848272589282
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Protocol 07 - Climbing_15
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 5
+        width: 20
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2eef528d936f119f0800000000000000
+      internalID: -499347355361476894
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Protocol 07 - Climbing_16
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 7
+        width: 16
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2d66b30bd7e043f00800000000000000
+      internalID: 1095516542348256978
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Protocol 07 - Climbing_17
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 20
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1dc91cde9cde2a390800000000000000
+      internalID: -7808417352373920559
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Protocol 07 - Climbing_18
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 5
+        width: 8
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 330660fe5604e20f0800000000000000
+      internalID: -1139902849132109773
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Protocol 07 - Climbing_19
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 5
+        width: 16
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1f13c3991070800e0800000000000000
+      internalID: -2303583505952787983
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Protocol 07 - Climbing_20
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 0
+        width: 18
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3f2e406dae39270b0800000000000000
+      internalID: -5732356738866945293
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Protocol 07 - Climbing_0: -7683308906514830667
+      Protocol 07 - Climbing_1: 4845901522750878744
+      Protocol 07 - Climbing_10: -2898324339280188798
+      Protocol 07 - Climbing_11: -6071986370775582836
+      Protocol 07 - Climbing_12: -2140377484857932417
+      Protocol 07 - Climbing_13: -2645637268558278138
+      Protocol 07 - Climbing_14: 716826848272589282
+      Protocol 07 - Climbing_15: -499347355361476894
+      Protocol 07 - Climbing_16: 1095516542348256978
+      Protocol 07 - Climbing_17: -7808417352373920559
+      Protocol 07 - Climbing_18: -1139902849132109773
+      Protocol 07 - Climbing_19: -2303583505952787983
+      Protocol 07 - Climbing_2: 5175670424613084113
+      Protocol 07 - Climbing_20: -5732356738866945293
+      Protocol 07 - Climbing_3: 7712386420923514390
+      Protocol 07 - Climbing_4: -7065585351175417424
+      Protocol 07 - Climbing_5: -6729078684806549393
+      Protocol 07 - Climbing_6: -2569585734969748464
+      Protocol 07 - Climbing_7: -1218635266924992712
+      Protocol 07 - Climbing_8: -5892133234174047605
+      Protocol 07 - Climbing_9: -5346472553533506876
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

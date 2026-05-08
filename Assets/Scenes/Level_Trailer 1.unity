@@ -18221,7 +18221,7 @@ Transform:
   m_GameObject: {fileID: 1904159811}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 39.9, y: 29.1, z: -10}
+  m_LocalPosition: {x: 20.9, y: 14.1, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -29635,6 +29635,9 @@ MonoBehaviour:
   aud: {fileID: 4133709536009036854}
   delayBetweenStars: 0.5
   typingSpeed: 0.02
+  frase1: Delivery done... improve your performance.
+  frase2: Nice job. The company it's satisfied
+  frase3: Perfect delivery. Nobody did it better.
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
