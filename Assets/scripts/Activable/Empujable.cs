@@ -5,48 +5,57 @@ public class Empujable : MonoBehaviour
 {
     private Rigidbody2D rb;
 
+    private int empujadores = 0;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        
-        // El objeto debe ser dinámico para que la gravedad le afecte siempre.
+
         rb.bodyType = RigidbodyType2D.Dynamic;
-        
-        // Por defecto, congelamos la posición X y la rotación. 
-        // El eje Y se queda libre para que pueda caer.
+
         CongelarMovimiento(true);
     }
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        EvaluarEmpuje(collision, true);
+        if (EsEmpujadorValido(collision))
+        {
+            empujadores++;
+            CongelarMovimiento(false);
+        }
     }
 
     void OnCollisionExit2D(Collision2D collision)
     {
-        EvaluarEmpuje(collision, false);
+        if (EsEmpujadorValido(collision))
+        {
+            empujadores--;
+
+            if (empujadores <= 0)
+            {
+                empujadores = 0;
+                CongelarMovimiento(true);
+            }
+        }
     }
 
-    private void EvaluarEmpuje(Collision2D collision, bool tocando)
+    bool EsEmpujadorValido(Collision2D collision)
     {
         PlayerController player = collision.collider.GetComponent<PlayerController>();
 
-        if ((player != null && player.repaTipo == PlayerController.Repartidor.Heavy) || collision.gameObject.CompareTag("Empujable"))
-        {
-            // Si el Heavy lo toca, liberamos X. Si lo deja de tocar, lo bloqueamos.
-            CongelarMovimiento(!tocando);
-        }
+        return
+            (player != null &&player.repaTipo == PlayerController.Repartidor.Heavy) || collision.gameObject.CompareTag("Empujable");
     }
 
     private void CongelarMovimiento(bool congelar)
     {
         if (congelar)
         {
-            rb.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezeRotation;
+            rb.constraints = RigidbodyConstraints2D.FreezePositionX;
         }
         else
         {
-            // Solo congelamos la rotación para que el objeto no ruede como una pelota
+            rb.constraints = RigidbodyConstraints2D.None;
             rb.constraints = RigidbodyConstraints2D.FreezeRotation;
         }
     }
