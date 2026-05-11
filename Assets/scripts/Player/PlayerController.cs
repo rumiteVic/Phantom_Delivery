@@ -127,7 +127,15 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
-            rb.gravityScale = 1;
+            if(repaTipo == Repartidor.Fantasma && !grounded)
+            {
+                rb.gravityScale = 0.7f;
+            }
+            else
+            {
+                rb.gravityScale = 1.6f;
+            }
+            
             if (wallJumpLockCounter > 0) wallJumpLockCounter -= Time.fixedDeltaTime;
             else rb.linearVelocity = new Vector2(move.x * speed, rb.linearVelocity.y);
         }
@@ -187,10 +195,10 @@ public class PlayerController : MonoBehaviour
 
     void StatsRepartidor() {
         switch (repaTipo) {
-            case Repartidor.Fantasma: baseSpeed = 7f; baseJump = 19f; throwForce = 0f; break;
-            case Repartidor.Normal: baseSpeed = 7f; baseJump = 25f; throwForce = 5f; break;
-            case Repartidor.Heavy: baseSpeed = 5f; baseJump = 17f; throwForce = 7f; break;
-            case Repartidor.Climber: baseSpeed = 8f; baseJump = 14f; throwForce = 5f; break;
+            case Repartidor.Fantasma: baseSpeed = 8f; baseJump = 18f; throwForce = 0f; break;
+            case Repartidor.Normal: baseSpeed = 10f; baseJump = 26f; throwForce = 5f; break;
+            case Repartidor.Heavy: baseSpeed = 5f; baseJump = 15f; throwForce = 7f; break;
+            case Repartidor.Climber: baseSpeed = 8f; baseJump = 18f; throwForce = 5f; break;
         }
         speed = baseSpeed;
         jumpForce = baseJump;

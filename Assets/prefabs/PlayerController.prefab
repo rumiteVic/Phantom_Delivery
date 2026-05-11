@@ -5504,7 +5504,7 @@ MonoBehaviour:
     m_Bits: 8
   grounded: 0
   offset: {x: 0, y: -1.12, z: 0}
-  radius: 0.45
+  radius: 0.6
   climbLayer:
     serializedVersion: 2
     m_Bits: 64

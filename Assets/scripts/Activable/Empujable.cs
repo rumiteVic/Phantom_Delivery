@@ -31,7 +31,7 @@ public class Empujable : MonoBehaviour
     {
         PlayerController player = collision.collider.GetComponent<PlayerController>();
 
-        if (player != null && player.repaTipo == PlayerController.Repartidor.Heavy)
+        if ((player != null && player.repaTipo == PlayerController.Repartidor.Heavy) || collision.gameObject.CompareTag("Empujable"))
         {
             // Si el Heavy lo toca, liberamos X. Si lo deja de tocar, lo bloqueamos.
             CongelarMovimiento(!tocando);

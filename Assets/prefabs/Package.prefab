@@ -273,7 +273,7 @@ BoxCollider2D:
   m_Enabled: 1
   serializedVersion: 3
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 57d235430e4c86e4e9b3ffadbb389924, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -307,7 +307,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.32, y: 0.32}
+  m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
 --- !u!50 &4323267599069428302
 Rigidbody2D:
@@ -451,15 +451,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8248262188478803748, guid: 52439ea4a1bf1a44791f8f7c7896026a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.46
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8248262188478803748, guid: 52439ea4a1bf1a44791f8f7c7896026a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -5.94
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8248262188478803748, guid: 52439ea4a1bf1a44791f8f7c7896026a, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.08
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8248262188478803748, guid: 52439ea4a1bf1a44791f8f7c7896026a, type: 3}
       propertyPath: m_LocalRotation.w
