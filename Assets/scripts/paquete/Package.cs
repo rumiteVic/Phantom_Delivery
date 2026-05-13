@@ -29,6 +29,8 @@ public class Package : MonoBehaviour
     public bool broken = false;
 
     public ParticleSystem part;
+
+    Vector3 startPos;
     void Awake() {
         rb = GetComponent<Rigidbody2D>();
         col = GetComponent<Collider2D>();
@@ -56,6 +58,7 @@ public class Package : MonoBehaviour
     public void Start(){
         WhatPaquete();
         trail.SetActive(false);
+        startPos = transform.position;
     }
 
     public void OnPickedUp(Transform holder) {
@@ -125,7 +128,7 @@ public class Package : MonoBehaviour
     {
         if (collision.CompareTag("Agua"))
         {
-            FinalNivel.Instance.EjecutarMuerte();
+            transform.position = startPos;
         }
     }
 

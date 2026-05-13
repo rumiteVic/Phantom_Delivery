@@ -7,6 +7,8 @@ public class Empujable : MonoBehaviour
 
     private int empujadores = 0;
 
+    public bool especial = false;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -42,20 +44,25 @@ public class Empujable : MonoBehaviour
     bool EsEmpujadorValido(Collision2D collision)
     {
         PlayerController player = collision.collider.GetComponent<PlayerController>();
-
-        return
-            (player != null &&player.repaTipo == PlayerController.Repartidor.Heavy) || collision.gameObject.CompareTag("Empujable");
+        if (!especial)
+        {
+            return (player != null &&player.repaTipo == PlayerController.Repartidor.Heavy) || collision.gameObject.CompareTag("Empujable");
+        }
+        else
+        {
+            return player != null &&player.repaTipo == PlayerController.Repartidor.Heavy;
+        }
+        
     }
 
     private void CongelarMovimiento(bool congelar)
     {
         if (congelar)
         {
-            rb.constraints = RigidbodyConstraints2D.FreezePositionX;
+            rb.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezeRotation;
         }
         else
         {
-            rb.constraints = RigidbodyConstraints2D.None;
             rb.constraints = RigidbodyConstraints2D.FreezeRotation;
         }
     }
