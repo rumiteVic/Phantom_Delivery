@@ -556,10 +556,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 461916350612561613, guid: 1cf533efe4f236548862ee7c070d48d6, type: 3}
-      propertyPath: m_SortingOrder
-      value: 22
-      objectReference: {fileID: 0}
     - target: {fileID: 808151267410890423, guid: 1cf533efe4f236548862ee7c070d48d6, type: 3}
       propertyPath: m_LocalPosition.x
       value: -24.95
@@ -26959,6 +26955,9 @@ MonoBehaviour:
   aud: {fileID: 4133709536009036854}
   delayBetweenStars: 0.5
   typingSpeed: 0.02
+  frase1: Delivery done... improve your performance.
+  frase2: Nice job. The company it's satisfied
+  frase3: Perfect delivery. Nobody did it better.
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
