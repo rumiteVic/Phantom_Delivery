@@ -121,6 +121,9 @@ public class LevelsManager : MonoBehaviour
     public void AbrirMenuOptions()
     {
         optionsMenu.SetActive(true);
+        float savedValue = PlayerPrefs.GetFloat("masterVolume", 1f);
+
+        volumeSlider.value = savedValue;
     }
 
     public void Manual()

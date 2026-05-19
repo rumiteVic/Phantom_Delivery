@@ -23,13 +23,14 @@ public class TimerUI : MonoBehaviour
             textoTimer.text = Mathf.Floor(tiempo).ToString();
 
             // Cambiar color según marcas de tiempo
-            if (tiempo >= man.timeForThree){
+            if (tiempo >= man.timeForTwo){
+                textoTimer.color = colorDanger;
+            }
+            else if (tiempo >= man.timeForThree){
                 textoTimer.color = colorWarning;
                 
             }
-            else if (tiempo >= man.timeForTwo){
-                textoTimer.color = colorDanger;
-            }
+            
             else{
                 textoTimer.color = colorNormal;
             }

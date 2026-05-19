@@ -80,15 +80,6 @@ public class HUD : MonoBehaviour
             creditosMenu.gameObject.SetActive(false);
             Time.timeScale = 0;
         }
-        else if (menu == 2){
-            //OptionsMenu
-            mainMenu.gameObject.SetActive(false);
-            escMenu.gameObject.SetActive(false);
-            optionsMenu.gameObject.SetActive(true);
-            hudMenu.gameObject.SetActive(false);
-            creditosMenu.gameObject.SetActive(false);
-            Time.timeScale = 0;
-        }
         else if (menu == 3){
             //HUD
             mainMenu.gameObject.SetActive(false);
@@ -115,6 +106,15 @@ public class HUD : MonoBehaviour
     public void Opciones(){
         audioClick.Play();
         menu = 2;
+        //OptionsMenu
+        mainMenu.gameObject.SetActive(false);
+        escMenu.gameObject.SetActive(false);
+        optionsMenu.gameObject.SetActive(true);
+        hudMenu.gameObject.SetActive(false);
+        creditosMenu.gameObject.SetActive(false);
+        Time.timeScale = 0;
+        float savedValue = PlayerPrefs.GetFloat("masterVolume", 1f);
+        volumeSlider.value = savedValue;
     }
     public void Salir(){
         audioClick.Play();

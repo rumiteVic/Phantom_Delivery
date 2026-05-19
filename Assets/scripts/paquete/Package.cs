@@ -129,6 +129,7 @@ public class Package : MonoBehaviour
         if (collision.CompareTag("Agua"))
         {
             transform.position = startPos;
+            rb.linearVelocity = new Vector2(0, 0);
         }
     }
 
