@@ -28,6 +28,8 @@ public class PlayerController : MonoBehaviour
     public bool isWallHolding;
     float wallJumpLockCounter;
     float wallJumpLockTime = 0.15f;
+    float grabLockCounter = 0f;
+    float grabLockTime = 0.15f;
     bool canEmergencyJump = true;
     public ParticleSystem partHumo;
 
@@ -67,6 +69,10 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+        if (grabLockCounter > 0)
+        {
+            grabLockCounter -= Time.deltaTime;
+        }
         //Detectar suelo
         LayerMask maskActual = repaTipo == Repartidor.Fantasma ? sueloFantasma : sueloHumano;
 
@@ -96,7 +102,7 @@ public class PlayerController : MonoBehaviour
 
             bool grabPressed = input.Player.Climb.IsPressed();
 
-            isWallHolding = touchingWall && grabPressed && stamina > 0;
+            isWallHolding = touchingWall && grabPressed && stamina > 0 && grabLockCounter <= 0;
 
             if (isWallHolding && carriedPackage != null) Throw();
             Parpadeo();
@@ -153,28 +159,16 @@ public class PlayerController : MonoBehaviour
             {
                 ExecuteJump(Vector2.up * jumpForce);
             }
-            else if (touchingWall && repaTipo == Repartidor.Climber)
+            else if (isWallHolding)
             {
-                //Salto de pared
                 float wallDir = iz ? -1f : 1f;
-                
-                // Si tiene stamina: puede saltar hacia arriba. 
-                // Si NO tiene stamina, solo puede saltar hacia afuera (lejos de la pared).
-                if (stamina > 0) {
-                    Vector2 jDir = new Vector2(-wallDir * 0.8f, 1.2f).normalized;
-                    ExecuteJump(jDir * jumpForce * 1.2f);
-                    stamina -= 0.3f;
-                }
-                else if (canEmergencyJump)
-                {
-                    // SALTO DE EMERGENCIA (Solo uno hasta que toques suelo)
-                    Vector2 jDir = new Vector2(-wallDir * 1.5f, 0.8f).normalized;
-                    ExecuteJump(jDir * jumpForce * 1.1f);
-        
-                    canEmergencyJump = false;
-                    wallJumpLockCounter = wallJumpLockTime * 2f;
-                }
+
+                Vector2 jDir = new Vector2(-wallDir * 0.8f, 1.2f).normalized;
+                ExecuteJump(jDir * jumpForce * 1.2f);
+                stamina -= 0.5f;
+                isWallHolding = false;
                 wallJumpLockCounter = wallJumpLockTime;
+                grabLockCounter = grabLockTime;
             }
             canJump = false;
         }

@@ -24553,8 +24553,8 @@ MonoBehaviour:
   delayBetweenStars: 0.5
   typingSpeed: 0.02
   frase1: Delivery done... improve your performance.
-  frase2: Nice job. The company it's satisfied
-  frase3: Perfect delivery. Nobody did it better.
+  frase2: Well done, could be better though.
+  frase3: That was perfect, keep it up!
 --- !u!222 &7114065366796434306
 CanvasRenderer:
   m_ObjectHideFlags: 0

@@ -22309,7 +22309,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sprite: {fileID: 461916351443218552}
-  duracion: 0.2
+  duracion: 0.1
   play: {fileID: 3187198602090893834}
 --- !u!114 &2491655472366723298
 MonoBehaviour:
