@@ -13,6 +13,7 @@ TagManager:
   - Entierro
   - Empujable
   - Agua
+  - ZonaNoSaltoFantasma
   layers:
   - Default
   - TransparentFX
@@ -27,8 +28,8 @@ TagManager:
   - Phantom
   - Human
   - Package
-  - 
-  - 
+  - What
+  - Suelo2
   - 
   - 
   - 

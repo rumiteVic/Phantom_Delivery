@@ -61,18 +61,19 @@ public class Package : MonoBehaviour
         startPos = transform.position;
     }
 
-    public void OnPickedUp(Transform holder) {
-        aud.loop = false;
-        aud.Stop();
-        aud.clip = cae;
-        aud.Play();
-        if (!canBePicked) return;
+    public bool OnPickedUp(Transform holder)
+    {
+        if (!canBePicked)
+            return false;
+
         carrier = holder;
         transform.parent = holder;
         transform.localPosition = new Vector3(0f, 1.8f, 0f);
         rb.simulated = false;
         col.enabled = false;
         trail.SetActive(false);
+
+        return true;
     }
     
     public void OnDropped() {
@@ -93,7 +94,7 @@ public class Package : MonoBehaviour
         aud.clip = lanzar;
         aud.Play();
         aud.loop = true;
-        Invoke(nameof(EnablePickup), 0.2f);
+        Invoke(nameof(EnablePickup), 0.3f);
         trail.SetActive(true);
     }
 

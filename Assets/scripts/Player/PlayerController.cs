@@ -13,10 +13,11 @@ public class PlayerController : MonoBehaviour
     public float jumpForce = 20f;
     float baseJump = 20f;
     public Rigidbody2D rb;
-    public LayerMask layerMask;
     public bool grounded = false;
     public Vector3 offset = new Vector3(0f, -2f, 0f);
     public float radius = 0.6f;
+    public LayerMask sueloHumano;
+    public LayerMask sueloFantasma;
     
     [Header("Escalada (Solo Climber)")]
     public LayerMask climbLayer;
@@ -67,7 +68,12 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         //Detectar suelo
-        grounded = Physics2D.OverlapCircle(transform.position + offset, radius, layerMask);
+        LayerMask maskActual = repaTipo == Repartidor.Fantasma ? sueloFantasma : sueloHumano;
+
+        grounded = Physics2D.OverlapCircle(transform.position + offset,
+                    radius,
+                    maskActual
+                );
         if (grounded) 
         {
             stamina = maxStamina;
@@ -88,8 +94,9 @@ public class PlayerController : MonoBehaviour
             Vector2 origin = (Vector2)transform.position + new Vector2(directionn * (col.bounds.extents.x + 0.1f), 0f);
             touchingWall = Physics2D.OverlapBox(origin, boxSize, 0f, climbLayer);
 
-            bool intentandoAgarrar = (iz && move.x < -0.1f) || (!iz && move.x > 0.1f);
-            isWallHolding = touchingWall && intentandoAgarrar && stamina > 0;
+            bool grabPressed = input.Player.Climb.IsPressed();
+
+            isWallHolding = touchingWall && grabPressed && stamina > 0;
 
             if (isWallHolding && carriedPackage != null) Throw();
             Parpadeo();
@@ -129,7 +136,7 @@ public class PlayerController : MonoBehaviour
         {
             if(repaTipo == Repartidor.Fantasma && !grounded)
             {
-                rb.gravityScale = 0.7f;
+                rb.gravityScale = 0.6f;
             }
             else
             {
@@ -197,8 +204,8 @@ public class PlayerController : MonoBehaviour
         switch (repaTipo) {
             case Repartidor.Fantasma: baseSpeed = 8f; baseJump = 18f; throwForce = 0f; break;
             case Repartidor.Normal: baseSpeed = 10f; baseJump = 26f; throwForce = 5f; break;
-            case Repartidor.Heavy: baseSpeed = 5f; baseJump = 15f; throwForce = 7f; break;
-            case Repartidor.Climber: baseSpeed = 8f; baseJump = 18f; throwForce = 5f; break;
+            case Repartidor.Heavy: baseSpeed = 5f; baseJump = 14.7f; throwForce = 7f; break;
+            case Repartidor.Climber: baseSpeed = 8f; baseJump = 20f; throwForce = 5f; break;
         }
         speed = baseSpeed;
         jumpForce = baseJump;

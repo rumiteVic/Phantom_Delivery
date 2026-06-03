@@ -32,18 +32,23 @@ public class Player : MonoBehaviour
         if(cont.move.x < 0){
             sprite.flipX = true;
         }
+        if (cont.carriedPackage != null && cont.carriedPackage.transform.parent != transform)
+        {
+            cont.carriedPackage = null;
+        }
 
         if (!cont.isFantasma && cont.carriedPackage == null){
             Collider2D hit = Physics2D.OverlapCircle(transform.position, pickupRadius, packageLayer);
             if (hit != null){
                 Package pkg = hit.GetComponent<Package>();
                 if (pkg != null){
-                    cont.carriedPackage = pkg;
-                    pkg.OnPickedUp(transform);
-                    cont.ApplyPackageEffects(pkg);
+                    if (pkg.OnPickedUp(transform))
+                    {
+                        cont.carriedPackage = pkg;
+                        cont.ApplyPackageEffects(pkg);
+                    }
                 }
             }
-
         }
     }
 
@@ -57,5 +62,20 @@ public class Player : MonoBehaviour
     {
         aud.Stop();
         aud.Play();
+    }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (!cont.isFantasma && cont.carriedPackage == null){
+
+                Package pkg = collision.GetComponent<Package>();
+                if (pkg != null){
+                    if (pkg.OnPickedUp(transform))
+                    {
+                        cont.carriedPackage = pkg;
+                        cont.ApplyPackageEffects(pkg);
+                    }
+                }
+            }
     }
 }

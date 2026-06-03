@@ -43,7 +43,7 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Activate",
+                    "name": "Climb",
                     "type": "Button",
                     "id": "27c5f898-bc57-4ee1-8800-db469aca5fe3",
                     "expectedControlType": "",
@@ -91,6 +91,15 @@
                     "name": "Hacks",
                     "type": "Button",
                     "id": "a505fb97-b090-4b5e-b79b-0e0498778f03",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Hacks2",
+                    "type": "Button",
+                    "id": "edaae79a-18fe-498a-9f97-39e907e3cfa1",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
@@ -468,18 +477,18 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Gamepad",
-                    "action": "Activate",
+                    "action": "Climb",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
                     "id": "36e52cba-0905-478e-a818-f4bfcb9f3b9a",
-                    "path": "<Keyboard>/c",
+                    "path": "<Keyboard>/z",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard&Mouse",
-                    "action": "Activate",
+                    "action": "Climb",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -491,6 +500,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "Hacks",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "aeea14f9-5e6a-43f3-b99d-c6a551fa6da0",
+                    "path": "<Keyboard>/f5",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Hacks2",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

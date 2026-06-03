@@ -66,4 +66,19 @@ public class Empujable : MonoBehaviour
             rb.constraints = RigidbodyConstraints2D.FreezeRotation;
         }
     }
+    void OnCollisionStay2D(Collision2D collision)
+    {
+        if (!collision.collider.CompareTag("Empujable"))
+            return;
+
+        foreach (ContactPoint2D contact in collision.contacts)
+        {
+            // Si el contacto es vertical (una encima de otra)
+            if (Mathf.Abs(contact.normal.y) > 0.7f)
+            {
+                // Evita que se transmitan fuerzas horizontales
+                rb.linearVelocity = new Vector2(0f, rb.linearVelocity.y);
+            }
+        }
+    }
 }

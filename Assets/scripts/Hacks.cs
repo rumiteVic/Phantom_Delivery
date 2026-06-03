@@ -13,22 +13,31 @@ public class Hacks : MonoBehaviour
     {
         if (input.Player.Hacks.WasPressedThisFrame())
         {
-            ActivateHacks();
+            SetAllStars(3);
+        }
+        if (input.Player.Hacks2.WasPressedThisFrame())
+        {
+            SetAllStars(1);
         }
     }
-    void ActivateHacks()
+    void SetAllStars(int stars)
     {
-        int totalLevels = 8; 
+        int totalLevels = 9;
 
-        // Desbloquea el acceso a los niveles
         PlayerPrefs.SetInt("LevelReached", totalLevels);
 
         for (int i = 0; i <= totalLevels; i++)
         {
-            //Desbloquea tutoriales
             PlayerPrefs.SetInt("Tutorial_" + i, 1);
         }
 
+        for (int levelNum = 2; levelNum <= totalLevels; levelNum++)
+        {
+            PlayerPrefs.SetInt("Stars_Level_" + levelNum, stars);
+        }
+
         PlayerPrefs.Save();
+
+        Debug.Log($"Hacks activados: todos los niveles con {stars} estrellas");
     }
 }
